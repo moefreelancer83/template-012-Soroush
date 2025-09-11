@@ -1,0 +1,808 @@
+{
+  "templateId": "template-012",
+  "userId": "user_001",
+  "metadata": {
+    "templateName": "Keller Law Firm",
+    "version": "1.0.0",
+    "seo": {
+      "de": {
+        "title": "Keller Rechtsanwaltskanzlei - Premium Rechtsdienstleistungen in Zürich",
+        "description": "Führende internationale Anwaltskanzlei in Zürich, die umfassende Rechtsdienstleistungen für Unternehmen, Privatpersonen und Startups in der Schweiz und Europa anbietet.",
+        "keywords": "Anwaltskanzlei, Rechtsdienstleistungen, Zürich, Schweiz, Gesellschaftsrecht, Prozessführung, Rechtsberatung",
+        "author": "Keller Rechtsanwaltskanzlei",
+        "locale": "de_CH"
+      },
+      "en": {
+        "title": "Keller Law Firm - Premium Legal Services in Zurich",
+        "description": "Leading international law firm in Zurich providing comprehensive legal services to businesses, individuals, and startups across Switzerland and Europe.",
+        "keywords": "law firm, legal services, Zurich, Switzerland, corporate law, litigation, legal advice",
+        "author": "Keller Law Firm",
+        "locale": "en_CH"
+      }
+    }
+  },
+  "de": {
+    "navigation": {
+      "companyName": "Keller Rechtsanwaltskanzlei",
+      "items": [
+        { "name": "Startseite", "href": "/" },
+        { "name": "Über uns", "href": "/about" },
+        { "name": "Dienstleistungen", "href": "/services" },
+        { "name": "Mandanten", "href": "/clients" },
+        { "name": "Team", "href": "/team" },
+        { "name": "Kontakt", "href": "/contact" }
+      ],
+      "ctaText": "Loslegen"
+    },
+    "cta": {
+      "homeTitle": "Bereit zu beginnen?",
+      "homeDescription": "Kontaktieren Sie uns noch heute für eine vertrauliche Beratung. Unser erfahrenes Rechtsteam ist bereit, Ihnen die strategische Beratung zu bieten, die Sie benötigen.",
+      "scheduleConsultationText": "Beratung vereinbaren",
+      "callPrefix": "Anrufen"
+    },
+    "metadata": {
+      "title": "Keller Rechtsanwaltskanzlei - Premium Rechtsdienstleistungen in Zürich",
+      "description": "Führende internationale Anwaltskanzlei in Zürich, die umfassende Rechtsdienstleistungen für Unternehmen, Privatpersonen und Startups in der Schweiz und Europa anbietet.",
+      "keywords": "Anwaltskanzlei, Rechtsdienstleistungen, Zürich, Schweiz, Gesellschaftsrecht, Prozessführung, Rechtsberatung"
+    },
+    "hero": {
+      "title": "Exzellenz in der Rechtsvertretung",
+      "subtitle": "Keller Rechtsanwaltskanzlei bietet ausgeklügelte Rechtslösungen mit unerschütterlichem Engagement für den Erfolg unserer Mandanten. Mit Sitz im Herzen von Zürich betreuen wir Unternehmen und Privatpersonen in der ganzen Schweiz und international.",
+      "cta": "Beratung vereinbaren",
+      "image": "https://images.pexels.com/photos/5668473/pexels-photo-5668473.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop"
+    },
+    "about": {
+      "title": "Unsere Geschichte",
+      "subtitle": "Entdecken Sie das Erbe, die Werte und die Vision, die Keller Rechtsanwaltskanzlei zu einem vertrauenswürdigen Partner für rechtliche Exzellenz in der Schweiz und darüber hinaus gemacht haben.",
+      "content": "1987 gegründet, hat sich Keller Rechtsanwaltskanzlei als eine der angesehensten Anwaltspraxen in Zürich etabliert. Unsere Kanzlei verbindet traditionelle schweizer Rechtsexzellenz mit innovativen Ansätzen für moderne rechtliche Herausforderungen. Wir sind stolz darauf, personalisierte, strategische Rechtslösungen zu liefern, die die Interessen unserer Mandanten schützen und ihre Ziele vorantreiben. Unser Engagement für Exzellenz, Integrität und Mandantenservice hat uns Anerkennung als führende Kanzlei in der Schweizer Rechtslandschaft eingebracht.",
+      "mission": "Außergewöhnliche Rechtsvertretung zu bieten, während wir dauerhafte Beziehungen aufbauen, die auf Vertrauen, Expertise und Ergebnissen basieren.",
+      "heroImage": "https://images.pexels.com/photos/5668473/pexels-photo-5668473.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop",
+      "officeImage": "https://images.pexels.com/photos/5668858/pexels-photo-5668858.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop",
+      "officeImageAlt": "Keller Rechtsanwaltskanzlei Büro",
+      "heritageImageAlt": "Keller Rechtsanwaltskanzlei Erbe",
+      "yearsOfExcellence": "35+",
+      "yearsOfExcellenceLabel": "Jahre der Exzellenz",
+      "learnMoreText": "Über unsere Kanzlei erfahren",
+      "heritageTitle": "Erbe der Exzellenz",
+      "missionTitle": "Unsere Mission",
+      "coreValuesTitle": "Unsere Grundwerte",
+      "stats": [
+        {
+          "value": "35+",
+          "label": "Jahre Erfahrung"
+        },
+        {
+          "value": "500+",
+          "label": "Betreute Mandanten"
+        },
+        {
+          "value": "95%",
+          "label": "Erfolgsquote"
+        },
+        {
+          "value": "24/7",
+          "label": "Notfallbetreuung"
+        }
+      ],
+      "values": [
+        {
+          "title": "Exzellenz",
+          "description": "Wir halten die höchsten Standards in der Rechtspraxis und im Mandantenservice aufrecht."
+        },
+        {
+          "title": "Integrität",
+          "description": "Ethisches Verhalten und Transparenz leiten jeden Aspekt unserer Arbeit."
+        },
+        {
+          "title": "Innovation",
+          "description": "Wir begrüßen moderne Lösungen, während wir rechtliche Traditionen respektieren."
+        }
+      ]
+    },
+    "services": {
+      "title": "Rechtliche Tätigkeitsbereiche",
+      "description": "Umfassende Rechtsexpertise in mehreren Tätigkeitsbereichen, die strategische Lösungen für komplexe Herausforderungen liefert.",
+      "learnMoreText": "Mehr erfahren →",
+      "viewAllText": "Alle Dienstleistungen anzeigen",
+      "areas": [
+        {
+          "title": "Gesellschaftsrecht",
+          "description": "Umfassende gesellschaftsrechtliche Dienstleistungen einschließlich Fusionen & Übernahmen, Unternehmensführung und regulatorische Compliance für Unternehmen aller Größen."
+        },
+        {
+          "title": "Handelsstreitigkeiten",
+          "description": "Expertenvertretung in komplexen Handelsstreitigkeiten, Schiedsverfahren und Prozessführung in verschiedenen Branchen und Jurisdiktionen."
+        },
+        {
+          "title": "Banken & Finanzen",
+          "description": "Spezialisierte Expertise in Bankvorschriften, Finanztransaktionen und Compliance-Angelegenheiten für Finanzinstitute und ihre Kunden."
+        },
+        {
+          "title": "Immobilienrecht",
+          "description": "Vollservice-Immobilienrechtsbetreuung einschließlich Immobilientransaktionen, Entwicklungsprojekten und Investitionsstrukturierung."
+        },
+        {
+          "title": "Arbeitsrecht",
+          "description": "Strategische arbeitsrechtliche Beratung zu Arbeitsplatzrichtlinien, Führungskräfteverträgen und Arbeitsstreitschlichtung."
+        },
+        {
+          "title": "Steuer- & Regulierungsrecht",
+          "description": "Umfassende Steuerplanung, regulatorische Compliance und Beratungsdienstleistungen für komplexe inländische und internationale Angelegenheiten."
+        }
+      ]
+    },
+    "clients": {
+      "title": "Wen wir betreuen",
+      "subtitle": "Wir bieten maßgeschneiderte Rechtslösungen für eine vielfältige Palette von Mandanten, von multinationalen Unternehmen bis hin zu vermögenden Privatpersonen und aufstrebenden Startups.",
+      "successStoriesTitle": "Mandanten-Erfolgsgeschichten",
+      "successStoriesDescription": "Unser Engagement für Exzellenz hat zu erfolgreichen Ergebnissen in verschiedenen Branchen und Mandantentypen geführt.",
+      "ctaTitle": "Werden Sie unsere nächste Erfolgsgeschichte",
+      "ctaDescription": "Schließen Sie sich der wachsenden Liste zufriedener Mandanten an, die von unserer strategischen Rechtsberatung und unserem unerschütterlichen Engagement für Exzellenz profitiert haben.",
+      "ctaButtonText": "Beginnen Sie Ihre Rechtsreise",
+      "testimonials": [
+        {
+          "quote": "Keller Rechtsanwaltskanzlei bot außergewöhnliche Führung durch unsere komplexe Fusion. Ihre Expertise und Aufmerksamkeit für Details waren von unschätzbarem Wert.",
+          "author": "Fortune 500 CEO"
+        },
+        {
+          "quote": "Das tiefe Verständnis des Teams für Bankvorschriften half uns dabei, herausfordernde Compliance-Anforderungen erfolgreich zu navigieren.",
+          "author": "Bankvorstand"
+        },
+        {
+          "quote": "Von der Startup-Gründung bis zu unserer jüngsten Finanzierungsrunde war Keller Rechtsanwaltskanzlei unser vertrauensvoller Rechtspartner auf unserem gesamten Weg.",
+          "author": "Tech-Startup-Gründer"
+        }
+      ],
+      "types": [
+        {
+          "title": "Multinationale Unternehmen",
+          "description": "Wir bieten strategische Rechtsberatung für große Unternehmen, die in mehreren Jurisdiktionen tätig sind, und helfen dabei, komplexe regulatorische Umgebungen und internationale Geschäftsherausforderungen zu navigieren.",
+          "image": "/template-012/client-multinational.jpg"
+        },
+        {
+          "title": "Finanzinstitute",
+          "description": "Spezialisierte Dienstleistungen für Banken, Investmentfirmen und Fintech-Unternehmen, einschließlich regulatorischer Compliance, Transaktionsunterstützung und Streitbeilegung.",
+          "image": "/template-012/client-financial.jpg"
+        },
+        {
+          "title": "Vermögende Privatpersonen",
+          "description": "Personalisierte Rechtsdienstleistungen für wohlhabende Kunden einschließlich Nachlassplanung, Steueroptimierung und Strategien zum Schutz des Privatvermögens.",
+          "image": "/template-012/client-highnetworth.jpg"
+        },
+        {
+          "title": "Startups & Wachstumsunternehmen",
+          "description": "Umfassende Unterstützung für aufstrebende Unternehmen von der Gründung durch Wachstumsphasen, einschließlich Finanzierung, Governance und strategischen Transaktionen.",
+          "image": "/template-012/client-startups.jpg"
+        },
+        {
+          "title": "Immobilienentwickler",
+          "description": "End-to-End-Rechtsbetreuung für Immobilienentwicklungsprojekte, von Landakquisition über Bau bis hin zu Verkaufs- oder Leasingvereinbarungen.",
+          "image": "/template-012/client-realestate.jpg"
+        },
+        {
+          "title": "Family Offices",
+          "description": "Ausgeklügelte Rechtsberatung für Family Offices einschließlich Nachfolgeplanung, Governance-Strukturen und mehrgenerationalem Vermögensschutz.",
+          "image": "/template-012/client-familyoffices.jpg"
+        }
+      ]
+    },
+    "team": {
+      "title": "Unser Rechtsteam",
+      "description": "Lernen Sie unsere erfahrenen Anwälte kennen, die jahrzehntelange Expertise und ein Engagement für Exzellenz in jeden Fall einbringen.",
+      "viewProfileText": "Profil anzeigen",
+      "meetFullTeamText": "Unser vollständiges Team kennenlernen",
+      "members": [
+        {
+          "name": "Dr. Andreas Keller",
+          "title": "Geschäftsführender Partner",
+          "photo": "https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+          "slug": "andreas-keller",
+          "shortBio": "Führender Gesellschaftsanwalt mit 30+ Jahren Erfahrung in internationalen Transaktionen und schweizer Gesellschaftsrecht.",
+          "fullBio": "Dr. Andreas Keller ist der Gründungspartner von Keller Rechtsanwaltskanzlei und eine anerkannte Führungskraft im schweizer Gesellschaftsrecht. Mit über drei Jahrzehnten Erfahrung hat er bei einigen der bedeutendsten Gesellschaftstransaktionen in der Schweiz beraten. Dr. Keller spezialisiert sich auf Fusionen und Übernahmen, Unternehmensführung und grenzüberschreitende Transaktionen. Seine Mandanten umfassen multinationale Unternehmen, Private-Equity-Firmen und vermögende Privatpersonen, die ausgeklügelte Rechtsberatung suchen.",
+          "education": [
+            "J.D., Universität Zürich Rechtsfakultät (1987)",
+            "LL.M., Harvard Law School (1989)",
+            "Dr. iur., Universität Zürich (1991)"
+          ],
+          "admissions": [
+            "Schweizer Anwaltskammer (1988)",
+            "Zürcher Anwaltskammer (1988)"
+          ],
+          "memberships": [
+            "Internationale Anwaltskammer",
+            "Schweizer Schiedsgerichtsvereinigung",
+            "Europäische Vereinigung der Gesellschaftsanwälte"
+          ],
+          "languages": ["Deutsch", "Englisch", "Französisch", "Italienisch"]
+        },
+        {
+          "name": "Maria Schneider",
+          "title": "Partnerin, Prozessführung",
+          "photo": "https://images.pexels.com/photos/3756679/pexels-photo-3756679.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+          "slug": "maria-schneider",
+          "shortBio": "Expertin für Prozessführung spezialisiert auf Handelsstreitigkeiten und internationale Schiedsverfahren mit einer Erfolgsbilanz erfolgreicher Ergebnisse.",
+          "fullBio": "Maria Schneider ist Partnerin spezialisiert auf Handelsprozessführung und internationale Schiedsverfahren. Sie hat Mandanten in riskanten Handelsstreitigkeiten in verschiedenen Branchen vertreten und verfügt über umfangreiche Erfahrung sowohl in schweizer Gerichten als auch in internationalen Schiedsgerichten. Maria ist bekannt für ihren strategischen Ansatz bei komplexer Prozessführung und ihre Fähigkeit, günstige Ergebnisse für Mandanten sowohl durch Prozessführung als auch durch verhandelte Vergleiche zu erzielen.",
+          "education": [
+            "J.D., Universität Genf Rechtsfakultät (1995)",
+            "LL.M., New York University School of Law (1997)"
+          ],
+          "admissions": [
+            "Schweizer Anwaltskammer (1996)",
+            "Genfer Anwaltskammer (1996)",
+            "New York State Bar (1998)"
+          ],
+          "memberships": [
+            "Schweizer Schiedsgerichtsvereinigung",
+            "Internationale Handelskammer",
+            "Vereinigung Internationaler Schiedsrichter"
+          ],
+          "languages": ["Deutsch", "Englisch", "Französisch"]
+        },
+        {
+          "name": "Thomas Weber",
+          "title": "Partner, Banken & Finanzen",
+          "photo": "https://images.pexels.com/photos/2381069/pexels-photo-2381069.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+          "slug": "thomas-weber",
+          "shortBio": "Bankrechtsspezialist mit tiefgreifender Expertise in Finanzvorschriften und komplexen strukturierten Transaktionen.",
+          "fullBio": "Thomas Weber leitet unsere Banken & Finanzen-Praxis mit über 25 Jahren Erfahrung im Finanzrecht. Er berät regelmäßig große schweizer und internationale Banken zu regulatorischer Compliance, strukturierten Finanztransaktionen und komplexen Finanzprodukten. Thomas spielte eine Schlüsselrolle bei der Implementierung neuer regulatorischer Rahmenwerke und verfügt über umfangreiche Erfahrung in grenzüberschreitenden Finanztransaktionen und Bankrestrukturierungsangelegenheiten.",
+          "education": [
+            "J.D., Universität St. Gallen (1992)",
+            "Master in Banking Law, London School of Economics (1994)"
+          ],
+          "admissions": [
+            "Schweizer Anwaltskammer (1993)",
+            "St. Galler Anwaltskammer (1993)"
+          ],
+          "memberships": [
+            "Schweizer Bankrechtsvereinigung",
+            "International Financial Law Review",
+            "Europäischer Bankenverband Rechtsausschuss"
+          ],
+          "languages": ["Deutsch", "Englisch", "Französisch"]
+        },
+        {
+          "name": "Dr. Elena Rossi",
+          "title": "Senior Associate, Gesellschaftsrecht",
+          "photo": "https://images.pexels.com/photos/3785104/pexels-photo-3785104.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+          "slug": "elena-rossi",
+          "shortBio": "Aufstrebender Star im Gesellschaftsrecht mit Expertise in Startup-Rechtsangelegenheiten und Venture-Capital-Transaktionen.",
+          "fullBio": "Dr. Elena Rossi ist Senior Associate in unserer Gesellschaftspraxis, die sich auf aufstrebende Unternehmen und Venture-Capital-Transaktionen konzentriert. Sie ist zur Anlaufstelle für Startups und Wachstumsunternehmen geworden und bietet umfassende Rechtsbetreuung von der Gründung bis zu Exit-Strategien. Elena kombiniert traditionelle Gesellschaftsrechtsexpertise mit einem tiefen Verständnis für moderne Geschäftsherausforderungen, insbesondere in den Technologie- und Fintech-Sektoren.",
+          "education": [
+            "J.D., Bocconi Universität, Mailand (2010)",
+            "Dr. iur., Universität Zürich (2014)",
+            "Zertifikat in Technologierecht, Stanford Law School (2015)"
+          ],
+          "admissions": [
+            "Schweizer Anwaltskammer (2015)",
+            "Zürcher Anwaltskammer (2015)",
+            "Mailänder Anwaltskammer (2011)"
+          ],
+          "memberships": [
+            "Schweizer Venture Capital Vereinigung",
+            "Europäische Tech-Anwälte-Vereinigung",
+            "Frauen im Recht Schweiz"
+          ],
+          "languages": ["Italienisch", "Deutsch", "Englisch", "Französisch"]
+        }
+      ]
+    },
+    "contact": {
+      "title": "Kontakt",
+      "subtitle": "Bereit, Ihre Rechtsangelegenheit zu besprechen? Unser erfahrenes Team ist hier, um strategische Beratung und außergewöhnlichen Service zu bieten.",
+      "getInTouchTitle": "In Kontakt treten",
+      "getInTouchDescription": "Kontaktieren Sie unser Büro, um eine vertrauliche Beratung zu vereinbaren. Wir sind verpflichtet, prompte, professionelle Antworten auf alle Anfragen zu geben.",
+      "officeAddressLabel": "Büroadresse",
+      "phoneNumbersLabel": "Telefonnummern",
+      "officeLabel": "Büro",
+      "emergencyLabel": "Notfall",
+      "emailLabel": "E-Mail",
+      "officeHoursLabel": "Bürozeiten",
+      "directionsLabel": "Wegbeschreibung",
+      "findOfficeTitle": "Unser Büro finden",
+      "mapTitle": "Keller Rechtsanwaltskanzlei Standort",
+      "emergencyCtaTitle": "Benötigen Sie sofortige Rechtshilfe?",
+      "emergencyCtaDescription": "Wir verstehen, dass rechtliche Notfälle nicht den Geschäftszeiten folgen. Unsere Notfall-Hotline ist 24/7 für dringende Rechtsangelegenheiten verfügbar.",
+      "emergencyHotlinePrefix": "Notfall-Hotline:",
+      "formTitle": "Senden Sie uns eine Nachricht",
+      "formSubtitle": "Wir antworten innerhalb von 24 Stunden",
+      "namePlaceholder": "Ihr Name",
+      "emailPlaceholder": "Ihre E-Mail",
+      "phonePlaceholder": "Ihr Telefon",
+      "messagePlaceholder": "Erzählen Sie uns von Ihren rechtlichen Bedürfnissen...",
+      "submitText": "Nachricht senden",
+      "officeTitle": "Besuchen Sie unser Büro",
+      "address": {
+        "street": "Bahnhofstrasse 45",
+        "city": "8001 Zürich",
+        "country": "Schweiz"
+      },
+      "phone": "+41 44 123 45 67",
+      "email": "info@kellerlaw.ch",
+      "emergencyPhone": "+41 79 123 45 67",
+      "directions": "Im Herzen des Zürcher Finanzviertels gelegen, direkt vom Zürcher Hauptbahnhof aus erreichbar. Unsere Büros befinden sich im 12. Stock mit Panoramablick auf den Zürichsee und die Alpen.",
+      "googleMapsLink": "https://maps.google.com/embed?pb=!1m18!1m12!1m3!1d2701.4!2d8.5403!3d47.3769!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479aa0a08408cb6f%3A0x9b2b2b2b2b2b2b2b!2sBahnhofstrasse%2045%2C%208001%20Z%C3%BCrich%2C%20Switzerland!5e0!3m2!1sen!2sus!4v1234567890",
+      "hoursTitle": "Bürozeiten",
+      "hours": {
+        "weekdays": "Montag - Freitag: 8:00 - 18:00",
+        "saturday": "Samstag: Nur nach Vereinbarung",
+        "sunday": "Sonntag: Geschlossen"
+      }
+    },
+    "footer": {
+      "companyName": "Keller Rechtsanwaltskanzlei",
+      "tagline": "Exzellenz in der Rechtsvertretung. Betreuung von Mandanten in der ganzen Schweiz und international mit ausgeklügelten Rechtslösungen.",
+      "quickLinksTitle": "Schnellzugriffe",
+      "legalTitle": "Rechtliches",
+      "emergencyTitle": "Notfall-Rechtsbetreuung",
+      "attorneyDisclaimer": "Anwaltswerbung. Frühere Ergebnisse garantieren keine ähnlichen Resultate.",
+      "links": [
+        {
+          "title": "Impressum",
+          "url": "/impressum"
+        },
+        {
+          "title": "Datenschutzerklärung",
+          "url": "/privacy"
+        }
+      ],
+      "description": "Außergewöhnliche Rechtsdienstleistungen in Zürich seit 1987. Ihr vertrauensvoller Partner für alle Rechtsangelegenheiten.",
+      "practiceAreasTitle": "Tätigkeitsbereiche",
+      "practiceAreas": [
+        "Gesellschaftsrecht",
+        "Handelsstreitigkeiten",
+        "Banken & Finanzen",
+        "Immobilien",
+        "Geistiges Eigentum"
+      ],
+      "quickLinks": [
+        { "text": "Über uns", "href": "/about" },
+        { "text": "Unser Team", "href": "/team" },
+        { "text": "Dienstleistungen", "href": "/services" },
+        { "text": "Kontakt", "href": "/contact" },
+        { "text": "Datenschutzerklärung", "href": "/privacy" }
+      ],
+      "newsletterTitle": "Rechtliche Updates",
+      "newsletterDescription": "Abonnieren Sie, um rechtliche Einblicke und Updates zu erhalten.",
+      "newsletterPlaceholder": "E-Mail eingeben",
+      "newsletterButton": "Abonnieren",
+      "copyright": "© 2024 Keller Rechtsanwaltskanzlei. Alle Rechte vorbehalten.",
+      "socialLinks": [
+        {
+          "platform": "LinkedIn",
+          "url": "https://linkedin.com/company/kellerlawfirm"
+        },
+        { "platform": "Twitter", "url": "https://twitter.com/kellerlawfirm" }
+      ]
+    },
+    "impressum": {
+      "title": "Impressum",
+      "content": "Keller Rechtsanwaltskanzlei\nBahnhofstrasse 45\n8001 Zürich\nSchweiz\n\nTelefon: +41 44 123 45 67\nE-Mail: info@kellerlaw.ch\n\nGeschäftsführender Partner: Dr. Andreas Keller\nAnwaltskammer-Registrierung: Schweizer Anwaltskammer, Registrierungsnr. 12345\n\nBerufshaftpflichtversicherung:\nVersicherer: Swiss Legal Professional Insurance Ltd.\nVersicherungsdeckung: CHF 5.000.000\nGeografische Abdeckung: Weltweit\n\nAufsichtsbehörde:\nSchweizer Anwaltskammer\nMargaritenstrasse 4\n3001 Bern\nSchweiz\n\nMWSt-Nummer: CHE-123.456.789\nHandelsregister: Zürcher Handelsregister, CHE-123.456.789\n\nWebsite-Design und -Entwicklung: [Agenturname]\nTechnischer Support: [Support-Kontakt]\n\nHaftungsausschluss:\nDie auf dieser Website bereitgestellten Informationen dienen nur allgemeinen Informationszwecken und stellen keine Rechtsberatung dar. Durch den Zugriff auf diese Website oder die Kontaktaufnahme mit unserer Kanzlei über diese Website entsteht keine Anwalt-Mandant-Beziehung. Für spezifische Rechtsberatung kontaktieren Sie bitte unser Büro direkt, um eine Beratung zu vereinbaren."
+    },
+    "privacy": {
+      "title": "Datenschutzerklärung",
+      "content": "Zuletzt aktualisiert: 1. Januar 2024\n\n1. EINLEITUNG\nKeller Rechtsanwaltskanzlei (\"wir\", \"unser\" oder \"uns\") respektiert Ihre Privatsphäre und ist verpflichtet, Ihre persönlichen Informationen zu schützen. Diese Datenschutzerklärung erklärt, wie wir Ihre Informationen sammeln, verwenden, offenlegen und schützen, wenn Sie unsere Website besuchen oder unsere Dienstleistungen nutzen.\n\n2. INFORMATIONEN, DIE WIR SAMMELN\nWir können Informationen über Sie auf verschiedene Weise sammeln, einschließlich:\n- Persönliche Daten: Name, E-Mail-Adresse, Telefonnummer, Postanschrift und andere Kontaktinformationen\n- Rechtsangelegenheiten-Informationen: Details über Ihre rechtlichen Bedürfnisse und Angelegenheiten\n- Website-Nutzungsdaten: IP-Adresse, Browser-Typ, Betriebssystem und Surfverhalten\n\n3. WIE WIR IHRE INFORMATIONEN VERWENDEN\nWir verwenden gesammelte Informationen für:\n- Bereitstellung von Rechtsdienstleistungen und Beratung\n- Kommunikation mit Ihnen über Ihre Rechtsangelegenheiten\n- Verbesserung unserer Website und Dienstleistungen\n- Einhaltung rechtlicher Verpflichtungen\n- Marketing unserer Dienstleistungen (mit Ihrer Zustimmung)\n\n4. INFORMATIONSAUSTAUSCH UND -OFFENLEGUNG\nWir können Ihre Informationen teilen mit:\n- Anderen Anwälten und Mitarbeitern in unserer Kanzlei, soweit für Ihre Vertretung erforderlich\n- Drittanbieter-Dienstleistern, die uns bei unserem Betrieb unterstützen\n- Gerichten, Regulierungsbehörden und anderen Parteien, soweit gesetzlich vorgeschrieben\n- Anderen Parteien mit Ihrer ausdrücklichen Zustimmung\n\n5. DATENSICHERHEIT\nWir implementieren angemessene technische und organisatorische Sicherheitsmaßnahmen, um Ihre persönlichen Informationen vor unbefugtem Zugriff, Änderung, Offenlegung oder Zerstörung zu schützen.\n\n6. ANWALT-MANDANT-PRIVILEG\nKommunikation zwischen Ihnen und unseren Anwälten kann durch das Anwalt-Mandant-Privileg und professionelle Vertraulichkeitsregeln geschützt sein. Wir wahren strikte Vertraulichkeit aller Mandanteninformationen.\n\n7. IHRE RECHTE\nUnter anwendbaren Datenschutzgesetzen haben Sie möglicherweise Rechte auf:\n- Zugriff auf Ihre persönlichen Informationen\n- Korrektur ungenauer Informationen\n- Löschung Ihrer Informationen anfordern\n- Widerspruch gegen die Verarbeitung Ihrer Informationen\n- Datenportabilität anfordern\n\n8. COOKIES UND TRACKING-TECHNOLOGIEN\nUnsere Website verwendet Cookies und ähnliche Technologien, um Ihr Surferlebnis zu verbessern und Website-Traffic zu analysieren. Sie können Cookie-Einstellungen über Ihren Browser kontrollieren.\n\n9. INTERNATIONALE ÜBERTRAGUNGEN\nIhre Informationen können in andere Länder als die Schweiz übertragen und dort verarbeitet werden. Wir stellen sicher, dass angemessene Schutzmaßnahmen für solche Übertragungen vorhanden sind.\n\n10. AUFBEWAHRUNGSDAUER\nWir bewahren Ihre persönlichen Informationen so lange auf, wie es zur Bereitstellung unserer Dienstleistungen und zur Einhaltung rechtlicher Verpflichtungen erforderlich ist. Mandantendateien werden in der Regel mindestens 10 Jahre nach Abschluss der Angelegenheit aufbewahrt.\n\n11. DATENSCHUTZ FÜR KINDER\nUnsere Dienstleistungen richten sich nicht an Kinder unter 16 Jahren. Wir sammeln wissentlich keine persönlichen Informationen von Kindern unter 16 Jahren.\n\n12. ÄNDERUNGEN AN DIESER RICHTLINIE\nWir können diese Datenschutzerklärung von Zeit zu Zeit aktualisieren. Wir werden Sie über wesentliche Änderungen informieren, indem wir die aktualisierte Richtlinie auf unserer Website veröffentlichen.\n\n13. KONTAKTIEREN SIE UNS\nWenn Sie Fragen zu dieser Datenschutzerklärung oder unseren Datenschutzpraktiken haben, kontaktieren Sie uns bitte unter:\n\nKeller Rechtsanwaltskanzlei\nBahnhofstrasse 45\n8001 Zürich, Schweiz\nE-Mail: privacy@kellerlaw.ch\nTelefon: +41 44 123 45 67"
+    },
+    "testimonials": {
+      "title": "Mandanten-Erfolgsgeschichten",
+      "subtitle": "Hören Sie von unseren Mandanten über ihre Erfahrungen mit der Keller Rechtsanwaltskanzlei.",
+      "items": [
+        {
+          "name": "Michael Chen",
+          "position": "CEO, TechVentures AG",
+          "content": "Keller Rechtsanwaltskanzlei führte uns durch eine komplexe internationale Übernahme mit außergewöhnlichem Können und Aufmerksamkeit für Details. Ihre Expertise war von unschätzbarem Wert.",
+          "image": "https://images.pexels.com/photos/5668877/pexels-photo-5668877.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop"
+        },
+        {
+          "name": "Elena Rodriguez",
+          "position": "CFO, Global Finance Corp",
+          "content": "Das tiefe Verständnis des Teams für schweizer Bankvorschriften half uns dabei, eine herausfordernde regulatorische Umgebung erfolgreich zu navigieren.",
+          "image": "https://images.pexels.com/photos/5668878/pexels-photo-5668878.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop"
+        },
+        {
+          "name": "Robert Johnson",
+          "position": "Präsident, RJ Industries",
+          "content": "Hervorragende Vertretung in unserem Handelsstreit. Ihr strategischer Ansatz und gründliche Vorbereitung führten zu einem günstigen Ergebnis.",
+          "image": "https://images.pexels.com/photos/5668879/pexels-photo-5668879.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop"
+        },
+        {
+          "name": "Sophie Laurent",
+          "position": "Direktorin, Laurent Holdings",
+          "content": "Keller Rechtsanwaltskanzlei war über ein Jahrzehnt unser vertrauensvoller Rechtspartner. Ihre beständige Exzellenz und Zuverlässigkeit sind unübertroffen.",
+          "image": "https://images.pexels.com/photos/5668880/pexels-photo-5668880.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop"
+        }
+      ]
+    }
+  },
+  "en": {
+    "navigation": {
+      "companyName": "Keller Law Firm",
+      "items": [
+        { "name": "Home", "href": "/" },
+        { "name": "About", "href": "/about" },
+        { "name": "Services", "href": "/services" },
+        { "name": "Clients", "href": "/clients" },
+        { "name": "Team", "href": "/team" },
+        { "name": "Contact", "href": "/contact" }
+      ],
+      "ctaText": "Get Started"
+    },
+    "cta": {
+      "homeTitle": "Ready to Get Started?",
+      "homeDescription": "Contact us today for a confidential consultation. Our experienced legal team is ready to provide the strategic counsel you need.",
+      "scheduleConsultationText": "Schedule Consultation",
+      "callPrefix": "Call"
+    },
+    "metadata": {
+      "title": "Keller Law Firm - Premium Legal Services in Zurich",
+      "description": "Leading international law firm in Zurich providing comprehensive legal services to businesses, individuals, and startups across Switzerland and Europe.",
+      "keywords": "law firm, legal services, Zurich, Switzerland, corporate law, litigation, legal advice"
+    },
+    "hero": {
+      "title": "Excellence in Legal Representation",
+      "subtitle": "Keller Law Firm delivers sophisticated legal solutions with unwavering commitment to our clients' success. Based in the heart of Zurich, we serve businesses and individuals across Switzerland and internationally.",
+      "cta": "Schedule Consultation",
+      "image": "https://images.pexels.com/photos/5668473/pexels-photo-5668473.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop"
+    },
+    "about": {
+      "title": "Our Story",
+      "subtitle": "Discover the heritage, values, and vision that have made Keller Law Firm a trusted partner for legal excellence in Switzerland and beyond.",
+      "content": "Founded in 1987, Keller Law Firm has established itself as one of Zurich's most prestigious legal practices. Our firm combines traditional Swiss legal excellence with innovative approaches to modern legal challenges. We pride ourselves on delivering personalized, strategic legal solutions that protect our clients' interests and advance their objectives. Our commitment to excellence, integrity, and client service has earned us recognition as a leading firm in Switzerland's legal landscape.",
+      "mission": "To provide exceptional legal representation while building lasting relationships based on trust, expertise, and results.",
+      "heroImage": "https://images.pexels.com/photos/5668473/pexels-photo-5668473.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop",
+      "officeImage": "https://images.pexels.com/photos/5668858/pexels-photo-5668858.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop",
+      "officeImageAlt": "Keller Law Firm Office",
+      "heritageImageAlt": "Keller Law Firm Heritage",
+      "yearsOfExcellence": "35+",
+      "yearsOfExcellenceLabel": "Years of Excellence",
+      "learnMoreText": "Learn About Our Firm",
+      "heritageTitle": "Heritage of Excellence",
+      "missionTitle": "Our Mission",
+      "coreValuesTitle": "Our Core Values",
+      "stats": [
+        {
+          "value": "35+",
+          "label": "Years of Experience"
+        },
+        {
+          "value": "500+",
+          "label": "Clients Served"
+        },
+        {
+          "value": "95%",
+          "label": "Success Rate"
+        },
+        {
+          "value": "24/7",
+          "label": "Emergency Support"
+        }
+      ],
+      "values": [
+        {
+          "title": "Excellence",
+          "description": "We maintain the highest standards in legal practice and client service."
+        },
+        {
+          "title": "Integrity",
+          "description": "Ethical conduct and transparency guide every aspect of our work."
+        },
+        {
+          "title": "Innovation",
+          "description": "We embrace modern solutions while respecting legal traditions."
+        }
+      ]
+    },
+    "services": {
+      "title": "Legal Practice Areas",
+      "description": "Comprehensive legal expertise across multiple practice areas, delivering strategic solutions for complex challenges.",
+      "learnMoreText": "Learn More →",
+      "viewAllText": "View All Services",
+      "areas": [
+        {
+          "title": "Corporate Law",
+          "description": "Comprehensive corporate legal services including mergers & acquisitions, corporate governance, and regulatory compliance for businesses of all sizes."
+        },
+        {
+          "title": "Commercial Litigation",
+          "description": "Expert representation in complex commercial disputes, arbitration, and litigation across various industries and jurisdictions."
+        },
+        {
+          "title": "Banking & Finance",
+          "description": "Specialized expertise in banking regulations, financial transactions, and compliance matters for financial institutions and their clients."
+        },
+        {
+          "title": "Real Estate Law",
+          "description": "Full-service real estate legal support including property transactions, development projects, and investment structuring."
+        },
+        {
+          "title": "Employment Law",
+          "description": "Strategic employment law counsel covering workplace policies, executive agreements, and employment dispute resolution."
+        },
+        {
+          "title": "Tax & Regulatory",
+          "description": "Comprehensive tax planning, regulatory compliance, and advisory services for complex domestic and international matters."
+        }
+      ]
+    },
+    "clients": {
+      "title": "Who We Serve",
+      "subtitle": "We provide tailored legal solutions to a diverse range of clients, from multinational corporations to high-net-worth individuals and emerging startups.",
+      "successStoriesTitle": "Client Success Stories",
+      "successStoriesDescription": "Our commitment to excellence has resulted in successful outcomes across diverse industries and client types.",
+      "ctaTitle": "Become Our Next Success Story",
+      "ctaDescription": "Join the growing list of satisfied clients who have benefited from our strategic legal counsel and unwavering commitment to excellence.",
+      "ctaButtonText": "Start Your Legal Journey",
+      "testimonials": [
+        {
+          "quote": "Keller Law Firm provided exceptional guidance through our complex merger. Their expertise and attention to detail were invaluable.",
+          "author": "Fortune 500 CEO"
+        },
+        {
+          "quote": "The team's deep understanding of banking regulations helped us navigate challenging compliance requirements successfully.",
+          "author": "Banking Executive"
+        },
+        {
+          "quote": "From startup formation to our recent funding round, Keller Law Firm has been our trusted legal partner throughout our journey.",
+          "author": "Tech Startup Founder"
+        }
+      ],
+      "types": [
+        {
+          "title": "Multinational Corporations",
+          "description": "We provide strategic legal counsel to large corporations operating across multiple jurisdictions, helping navigate complex regulatory environments and international business challenges.",
+          "image": "/template-012/client-multinational.jpg"
+        },
+        {
+          "title": "Financial Institutions",
+          "description": "Specialized services for banks, investment firms, and fintech companies, including regulatory compliance, transaction support, and dispute resolution.",
+          "image": "/template-012/client-financial.jpg"
+        },
+        {
+          "title": "High-Net-Worth Individuals",
+          "description": "Personalized legal services for affluent clients including estate planning, tax optimization, and private wealth protection strategies.",
+          "image": "/template-012/client-highnetworth.jpg"
+        },
+        {
+          "title": "Startups & Growth Companies",
+          "description": "Comprehensive support for emerging businesses from formation through growth stages, including funding, governance, and strategic transactions.",
+          "image": "/template-012/client-startups.jpg"
+        },
+        {
+          "title": "Real Estate Developers",
+          "description": "End-to-end legal support for property development projects, from land acquisition through construction and sale or lease arrangements.",
+          "image": "/template-012/client-realestate.jpg"
+        },
+        {
+          "title": "Family Offices",
+          "description": "Sophisticated legal counsel for family offices including succession planning, governance structures, and multi-generational wealth preservation.",
+          "image": "/template-012/client-familyoffices.jpg"
+        }
+      ]
+    },
+    "team": {
+      "title": "Our Legal Team",
+      "description": "Meet our experienced attorneys who bring decades of expertise and a commitment to excellence in every case.",
+      "viewProfileText": "View Profile",
+      "meetFullTeamText": "Meet Our Full Team",
+      "members": [
+        {
+          "name": "Dr. Andreas Keller",
+          "title": "Managing Partner",
+          "photo": "https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+          "slug": "andreas-keller",
+          "shortBio": "Leading corporate lawyer with 30+ years of experience in international transactions and Swiss corporate law.",
+          "fullBio": "Dr. Andreas Keller is the founding partner of Keller Law Firm and a recognized leader in Swiss corporate law. With over three decades of experience, he has advised on some of the most significant corporate transactions in Switzerland. Dr. Keller specializes in mergers and acquisitions, corporate governance, and cross-border transactions. His clients include multinational corporations, private equity firms, and high-net-worth individuals seeking sophisticated legal counsel.",
+          "education": [
+            "J.D., University of Zurich Law School (1987)",
+            "LL.M., Harvard Law School (1989)",
+            "Dr. iur., University of Zurich (1991)"
+          ],
+          "admissions": [
+            "Swiss Bar Association (1988)",
+            "Zurich Bar Association (1988)"
+          ],
+          "memberships": [
+            "International Bar Association",
+            "Swiss Arbitration Association",
+            "European Corporate Lawyers Association"
+          ],
+          "languages": ["German", "English", "French", "Italian"]
+        },
+        {
+          "name": "Maria Schneider",
+          "title": "Partner, Litigation",
+          "photo": "https://images.pexels.com/photos/3756679/pexels-photo-3756679.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+          "slug": "maria-schneider",
+          "shortBio": "Expert litigator specializing in commercial disputes and international arbitration with a track record of successful outcomes.",
+          "fullBio": "Maria Schneider is a partner specializing in commercial litigation and international arbitration. She has represented clients in high-stakes commercial disputes across various industries and has extensive experience in both Swiss courts and international arbitration tribunals. Maria is known for her strategic approach to complex litigation and her ability to achieve favorable outcomes for clients through both litigation and negotiated settlements.",
+          "education": [
+            "J.D., University of Geneva Law School (1995)",
+            "LL.M., New York University School of Law (1997)"
+          ],
+          "admissions": [
+            "Swiss Bar Association (1996)",
+            "Geneva Bar Association (1996)",
+            "New York State Bar (1998)"
+          ],
+          "memberships": [
+            "Swiss Arbitration Association",
+            "International Chamber of Commerce",
+            "Association of International Arbitrators"
+          ],
+          "languages": ["German", "English", "French"]
+        },
+        {
+          "name": "Thomas Weber",
+          "title": "Partner, Banking & Finance",
+          "photo": "https://images.pexels.com/photos/2381069/pexels-photo-2381069.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+          "slug": "thomas-weber",
+          "shortBio": "Banking law specialist with deep expertise in financial regulations and complex structured transactions.",
+          "fullBio": "Thomas Weber leads our Banking & Finance practice with over 25 years of experience in financial law. He regularly advises major Swiss and international banks on regulatory compliance, structured finance transactions, and complex financial products. Thomas has played a key role in implementing new regulatory frameworks and has extensive experience in cross-border financial transactions and banking restructuring matters.",
+          "education": [
+            "J.D., University of St. Gallen (1992)",
+            "Master in Banking Law, London School of Economics (1994)"
+          ],
+          "admissions": [
+            "Swiss Bar Association (1993)",
+            "St. Gallen Bar Association (1993)"
+          ],
+          "memberships": [
+            "Swiss Banking Law Association",
+            "International Financial Law Review",
+            "European Banking Federation Legal Committee"
+          ],
+          "languages": ["German", "English", "French"]
+        },
+        {
+          "name": "Dr. Elena Rossi",
+          "title": "Senior Associate, Corporate Law",
+          "photo": "https://images.pexels.com/photos/3785104/pexels-photo-3785104.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+          "slug": "elena-rossi",
+          "shortBio": "Rising star in corporate law with expertise in startup legal matters and venture capital transactions.",
+          "fullBio": "Dr. Elena Rossi is a senior associate in our corporate practice, focusing on emerging companies and venture capital transactions. She has become the go-to lawyer for startups and growth companies, providing comprehensive legal support from formation through exit strategies. Elena combines traditional corporate law expertise with a deep understanding of modern business challenges, particularly in the technology and fintech sectors.",
+          "education": [
+            "J.D., Bocconi University, Milan (2010)",
+            "Dr. iur., University of Zurich (2014)",
+            "Certificate in Technology Law, Stanford Law School (2015)"
+          ],
+          "admissions": [
+            "Swiss Bar Association (2015)",
+            "Zurich Bar Association (2015)",
+            "Milan Bar Association (2011)"
+          ],
+          "memberships": [
+            "Swiss Venture Capital Association",
+            "European Tech Lawyers Association",
+            "Women in Law Switzerland"
+          ],
+          "languages": ["Italian", "German", "English", "French"]
+        }
+      ]
+    },
+    "contact": {
+      "title": "Contact Us",
+      "subtitle": "Ready to discuss your legal matter? Our experienced team is here to provide strategic counsel and exceptional service.",
+      "getInTouchTitle": "Get in Touch",
+      "getInTouchDescription": "Contact our office to schedule a confidential consultation. We're committed to providing prompt, professional responses to all inquiries.",
+      "officeAddressLabel": "Office Address",
+      "phoneNumbersLabel": "Phone Numbers",
+      "officeLabel": "Office",
+      "emergencyLabel": "Emergency",
+      "emailLabel": "Email",
+      "officeHoursLabel": "Office Hours",
+      "directionsLabel": "Directions",
+      "findOfficeTitle": "Find Our Office",
+      "mapTitle": "Keller Law Firm Location",
+      "emergencyCtaTitle": "Need Immediate Legal Assistance?",
+      "emergencyCtaDescription": "We understand that legal emergencies don't follow business hours. Our emergency hotline is available 24/7 for urgent legal matters.",
+      "emergencyHotlinePrefix": "Emergency Hotline:",
+      "formTitle": "Send Us a Message",
+      "formSubtitle": "We'll respond within 24 hours",
+      "namePlaceholder": "Your Name",
+      "emailPlaceholder": "Your Email",
+      "phonePlaceholder": "Your Phone",
+      "messagePlaceholder": "Tell us about your legal needs...",
+      "submitText": "Send Message",
+      "officeTitle": "Visit Our Office",
+      "address": {
+        "street": "Bahnhofstrasse 45",
+        "city": "8001 Zurich",
+        "country": "Switzerland"
+      },
+      "phone": "+41 44 123 45 67",
+      "email": "info@kellerlaw.ch",
+      "emergencyPhone": "+41 79 123 45 67",
+      "directions": "Located in the heart of Zurich's financial district, directly accessible from Zurich Hauptbahnhof. Our offices are on the 12th floor with panoramic views of Lake Zurich and the Alps.",
+      "googleMapsLink": "https://maps.google.com/embed?pb=!1m18!1m12!1m3!1d2701.4!2d8.5403!3d47.3769!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479aa0a08408cb6f%3A0x9b2b2b2b2b2b2b2b!2sBahnhofstrasse%2045%2C%208001%20Z%C3%BCrich%2C%20Switzerland!5e0!3m2!1sen!2sus!4v1234567890",
+      "hoursTitle": "Office Hours",
+      "hours": {
+        "weekdays": "Monday - Friday: 8:00 AM - 6:00 PM",
+        "saturday": "Saturday: By appointment only",
+        "sunday": "Sunday: Closed"
+      }
+    },
+    "footer": {
+      "companyName": "Keller Law Firm",
+      "tagline": "Excellence in legal representation. Serving clients across Switzerland and internationally with sophisticated legal solutions.",
+      "quickLinksTitle": "Quick Links",
+      "legalTitle": "Legal",
+      "emergencyTitle": "Emergency Legal Support",
+      "attorneyDisclaimer": "Attorney Advertising. Prior results do not guarantee a similar outcome.",
+      "links": [
+        {
+          "title": "Impressum",
+          "url": "/impressum"
+        },
+        {
+          "title": "Privacy Policy",
+          "url": "/privacy"
+        }
+      ],
+      "description": "Providing exceptional legal services in Zurich since 1987. Your trusted partner for all legal matters.",
+      "practiceAreasTitle": "Practice Areas",
+      "practiceAreas": [
+        "Corporate Law",
+        "Commercial Litigation",
+        "Banking & Finance",
+        "Real Estate",
+        "Intellectual Property"
+      ],
+      "quickLinks": [
+        { "text": "About Us", "href": "/about" },
+        { "text": "Our Team", "href": "/team" },
+        { "text": "Services", "href": "/services" },
+        { "text": "Contact", "href": "/contact" },
+        { "text": "Privacy Policy", "href": "/privacy" }
+      ],
+      "newsletterTitle": "Legal Updates",
+      "newsletterDescription": "Subscribe to receive legal insights and updates.",
+      "newsletterPlaceholder": "Enter your email",
+      "newsletterButton": "Subscribe",
+      "copyright": "© 2024 Keller Law Firm. All rights reserved.",
+      "socialLinks": [
+        {
+          "platform": "LinkedIn",
+          "url": "https://linkedin.com/company/kellerlawfirm"
+        },
+        { "platform": "Twitter", "url": "https://twitter.com/kellerlawfirm" }
+      ]
+    },
+    "impressum": {
+      "title": "Impressum",
+      "content": "Keller Law Firm\nBahnhofstrasse 45\n8001 Zurich\nSwitzerland\n\nPhone: +41 44 123 45 67\nEmail: info@kellerlaw.ch\n\nManaging Partner: Dr. Andreas Keller\nBar Registration: Swiss Bar Association, Registration No. 12345\n\nProfessional Liability Insurance:\nInsurer: Swiss Legal Professional Insurance Ltd.\nPolicy Coverage: CHF 5,000,000\nGeographical Coverage: Worldwide\n\nRegulatory Authority:\nSwiss Bar Association\nMargaritenstrasse 4\n3001 Bern\nSwitzerland\n\nVAT Number: CHE-123.456.789\nCommercial Registry: Zurich Commercial Registry, CHE-123.456.789\n\nWebsite Design and Development: [Agency Name]\nTechnical Support: [Support Contact]\n\nDisclaimer:\nThe information provided on this website is for general informational purposes only and does not constitute legal advice. No attorney-client relationship is formed by accessing this website or contacting our firm through this website. For specific legal advice, please contact our office directly to schedule a consultation."
+    },
+    "privacy": {
+      "title": "Privacy Policy",
+      "content": "Last updated: January 1, 2024\n\n1. INTRODUCTION\nKeller Law Firm (\"we,\" \"our,\" or \"us\") respects your privacy and is committed to protecting your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our services.\n\n2. INFORMATION WE COLLECT\nWe may collect information about you in a variety of ways, including:\n- Personal Data: Name, email address, telephone number, postal address, and other contact information\n- Legal Matter Information: Details about your legal needs and matters\n- Website Usage Data: IP address, browser type, operating system, and browsing behavior\n\n3. HOW WE USE YOUR INFORMATION\nWe use collected information for:\n- Providing legal services and consultation\n- Communicating with you about your legal matters\n- Improving our website and services\n- Complying with legal obligations\n- Marketing our services (with your consent)\n\n4. INFORMATION SHARING AND DISCLOSURE\nWe may share your information with:\n- Other lawyers and staff within our firm as necessary for your representation\n- Third-party service providers who assist us in our operations\n- Courts, regulatory bodies, and other parties as required by law\n- Other parties with your explicit consent\n\n5. DATA SECURITY\nWe implement appropriate technical and organizational security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction.\n\n6. ATTORNEY-CLIENT PRIVILEGE\nCommunications between you and our attorneys may be protected by attorney-client privilege and professional confidentiality rules. We maintain strict confidentiality of all client information.\n\n7. YOUR RIGHTS\nUnder applicable data protection laws, you may have rights to:\n- Access your personal information\n- Correct inaccurate information\n- Request deletion of your information\n- Object to processing of your information\n- Request data portability\n\n8. COOKIES AND TRACKING TECHNOLOGIES\nOur website uses cookies and similar technologies to enhance your browsing experience and analyze website traffic. You can control cookie settings through your browser.\n\n9. INTERNATIONAL TRANSFERS\nYour information may be transferred to and processed in countries other than Switzerland. We ensure appropriate safeguards are in place for such transfers.\n\n10. RETENTION PERIOD\nWe retain your personal information for as long as necessary to provide our services and comply with legal obligations. Client files are typically retained for a minimum of 10 years after matter completion.\n\n11. CHILDREN'S PRIVACY\nOur services are not directed to children under 16. We do not knowingly collect personal information from children under 16.\n\n12. CHANGES TO THIS POLICY\nWe may update this Privacy Policy from time to time. We will notify you of any material changes by posting the updated policy on our website.\n\n13. CONTACT US\nIf you have questions about this Privacy Policy or our privacy practices, please contact us at:\n\nKeller Law Firm\nBahnhofstrasse 45\n8001 Zurich, Switzerland\nEmail: privacy@kellerlaw.ch\nPhone: +41 44 123 45 67"
+    },
+    "testimonials": {
+      "title": "Client Success Stories",
+      "subtitle": "Hear from our clients about their experiences working with Keller Law Firm.",
+      "items": [
+        {
+          "name": "Michael Chen",
+          "position": "CEO, TechVentures AG",
+          "content": "Keller Law Firm guided us through a complex international acquisition with exceptional skill and attention to detail. Their expertise was invaluable.",
+          "image": "https://images.pexels.com/photos/5668877/pexels-photo-5668877.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop"
+        },
+        {
+          "name": "Elena Rodriguez",
+          "position": "CFO, Global Finance Corp",
+          "content": "The team's deep understanding of Swiss banking regulations helped us navigate a challenging regulatory environment successfully.",
+          "image": "https://images.pexels.com/photos/5668878/pexels-photo-5668878.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop"
+        },
+        {
+          "name": "Robert Johnson",
+          "position": "President, RJ Industries",
+          "content": "Outstanding representation in our commercial dispute. Their strategic approach and thorough preparation led to a favorable outcome.",
+          "image": "https://images.pexels.com/photos/5668879/pexels-photo-5668879.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop"
+        },
+        {
+          "name": "Sophie Laurent",
+          "position": "Director, Laurent Holdings",
+          "content": "Keller Law Firm has been our trusted legal partner for over a decade. Their consistent excellence and reliability are unmatched.",
+          "image": "https://images.pexels.com/photos/5668880/pexels-photo-5668880.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop"
+        }
+      ]
+    }
+  }
+}

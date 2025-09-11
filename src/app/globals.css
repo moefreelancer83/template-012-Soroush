@@ -1,0 +1,164 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 211 79% 15%;
+    --card: 0 0% 100%;
+    --card-foreground: 211 79% 15%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 211 79% 15%;
+    --primary: 211 79% 15%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 45 44% 92%;
+    --secondary-foreground: 211 79% 15%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+    --accent: 45 68% 55%;
+    --accent-foreground: 211 79% 15%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 211 79% 15%;
+    --radius: 0.5rem;
+    --navy: #0b1b3f;
+    --gold: #c9a64e;
+    --light-gold: #f4edd4;
+    --dark-navy: #081430;
+    --font-playfair: 'Playfair Display', serif;
+    --font-inter: 'Inter', sans-serif;
+  }
+
+  .dark {
+    --background: 211 79% 8%;
+    --foreground: 0 0% 98%;
+    --card: 211 79% 8%;
+    --card-foreground: 0 0% 98%;
+    --popover: 211 79% 8%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 211 79% 15%;
+    --secondary: 211 79% 12%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 211 79% 12%;
+    --muted-foreground: 217 33% 64%;
+    --accent: 45 68% 55%;
+    --accent-foreground: 211 79% 15%;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 211 79% 12%;
+    --input: 211 79% 12%;
+    --ring: 212 95% 83%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.font-playfair {
+  font-family: var(--font-playfair);
+}
+
+.font-inter {
+  font-family: var(--font-inter);
+}
+
+.text-navy {
+  color: var(--navy);
+}
+
+.bg-navy {
+  background-color: var(--navy);
+}
+
+.text-gold {
+  color: var(--gold);
+}
+
+.bg-gold {
+  background-color: var(--gold);
+}
+
+.bg-light-gold {
+  background-color: var(--light-gold);
+}
+
+.parallax {
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.slide-in-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.slide-in-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.slide-in-right {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.slide-in-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.hero-overlay {
+  background: linear-gradient(135deg, rgba(11, 27, 63, 0.8) 0%, rgba(8, 20, 48, 0.9) 100%);
+}
+
+.card-hover {
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(11, 27, 63, 0.15);
+}
+
+.btn-primary {
+  @apply bg-navy text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 hover:bg-dark-navy hover:shadow-lg transform hover:-translate-y-1;
+}
+
+.btn-secondary {
+  @apply bg-gold text-navy px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 hover:bg-yellow-500 hover:shadow-lg transform hover:-translate-y-1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-in,
+  .slide-in-left,
+  .slide-in-right,
+  .card-hover,
+  .btn-primary,
+  .btn-secondary {
+    transition: none;
+    transform: none;
+  }
+}
