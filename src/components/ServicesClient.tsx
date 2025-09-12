@@ -19,10 +19,10 @@ export default function ServicesClient() {
       <section className="py-20 bg-gradient-to-r from-navy to-blue-900 text-white">
         <div className="container mx-auto px-6">
           <AnimatedSection className="text-center">
-            <h1 className="text-5xl md:text-6xl font-playfair font-bold mb-6">
+            <h1 className="text-5xl md:text-6xl font-playfair font-bold mb-6" data-x="services.title">
               {services.title}
             </h1>
-            <p className="text-xl max-w-3xl mx-auto">
+            <p className="text-xl max-w-3xl mx-auto" data-x="services.description">
               {services.description}
             </p>
           </AnimatedSection>
