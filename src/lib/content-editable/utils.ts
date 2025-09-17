@@ -39,3 +39,20 @@ export const groupElementToArray = (
 
   return arr;
 };
+
+export const getTextStart = (el: HTMLElement, prevLeft?: number) => {
+  const fallbackPosition =
+    prevLeft ?? el.getBoundingClientRect().x + window.scrollX;
+
+  if (!el.firstChild) return fallbackPosition;
+  try {
+    const range = document.createRange();
+    range.setStart(el.firstChild, 0);
+    range.setEnd(el.firstChild, 1);
+
+    const rect = range.getBoundingClientRect();
+    return rect.left + window.scrollX;
+  } catch (e) {
+    return fallbackPosition;
+  }
+};

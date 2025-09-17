@@ -39,8 +39,8 @@ const ContentEditable = (props: PropsType) => {
       "keydown",
       (event) => {
         if (event.key === "Enter") {
-          event.preventDefault();
           if (event.shiftKey) return;
+          event.preventDefault();
           submitElementChange();
         }
       },
