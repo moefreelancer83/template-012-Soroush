@@ -1,13 +1,21 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import ReactDOM from "react-dom";
-import { getElementXAttribute } from "./utils";
+import {
+  getAllEditableElementGroupItems,
+  getElementXAttribute,
+  getElementXGroupAttribute,
+  groupElementToArray,
+} from "./utils";
+import { EditableContentValue } from "./types";
 
 type Props = {
   editableElements: HTMLElement[];
   imageChangeHandler: (file: File) => Promise<string> | string;
-  changeHandler: (changePath: string, newValue: string) => void;
+  changeHandler: (changePath: string, newValue: EditableContentValue) => void;
 };
+
+const POSITION_PRECISION = 10;
 
 function getTextStart(el: HTMLElement, prevLeft?: number) {
   const fallbackPosition =
@@ -27,39 +35,100 @@ function getTextStart(el: HTMLElement, prevLeft?: number) {
   }
 }
 
+type EditableElementType = "group" | "field" | "item";
+
 const EditablePopovers: React.FC<Props> = ({
   editableElements,
   imageChangeHandler,
   changeHandler,
 }) => {
   const [positions, setPositions] = useState<
-    { el: HTMLElement; top: number; left: number }[]
+    {
+      el: HTMLElement;
+      top: number;
+      left: number;
+      type: EditableElementType;
+    }[]
   >([]);
+
+  const getSetKey = (left: number, top: number) =>
+    `${Math.floor(left / POSITION_PRECISION) * POSITION_PRECISION}_${
+      Math.floor(top / POSITION_PRECISION) * POSITION_PRECISION
+    }`;
 
   const updatePositions = () => {
     setPositions((prevPositions) => {
       const map = new Map(
-        prevPositions.map((position) => [position.el, position])
+        prevPositions.map((position) => [position.el, position.left])
       );
 
-      return editableElements.map((el) => {
-        const firstTextStartPosition = getTextStart(el, map.get(el)?.left) ?? 0;
+      const tempOccupiedPositions = new Set<string>();
 
+      return editableElements.map((el) => {
+        let left = getTextStart(el) ?? 0;
+        let top = el.getBoundingClientRect().y + window.scrollY;
+
+        while (tempOccupiedPositions.has(getSetKey(left, top))) {
+          top += 40;
+        }
+
+        tempOccupiedPositions.add(getSetKey(left, top));
+
+        const type: EditableElementType = el.hasAttribute("data-x-group")
+          ? "group"
+          : el.parentElement?.hasAttribute("data-x-group")
+          ? "item"
+          : "field";
+          
         return {
           el,
-          top: el.getBoundingClientRect().y + window.scrollY,
-          left: firstTextStartPosition,
+          top,
+          left,
+          type,
         };
       });
     });
   };
 
-  const handlePopoverClick = (el: HTMLElement) => {
+  const handlePopoverClick = (el: HTMLElement, type: EditableElementType) => {
+    if (type === "group") {
+      const items = getAllEditableElementGroupItems(el);
+      const lastItem = items[items.length - 1] as HTMLElement;
+
+      if (!lastItem) return;
+
+      const newItem = lastItem.cloneNode(true) as HTMLElement;
+      el.appendChild(newItem);
+
+      const newGroupArray = groupElementToArray(el);
+      changeHandler(getElementXGroupAttribute(el), newGroupArray);
+
+      updatePositions();
+      return;
+    }
+
+    if (type === "item") {
+      const parentGroup = el.parentElement;
+      if (!parentGroup) return;
+
+      if (parentGroup.childElementCount === 1) return;
+
+      el.remove();
+
+      changeHandler(
+        getElementXGroupAttribute(parentGroup),
+        groupElementToArray(parentGroup)
+      );
+
+      updatePositions();
+      return;
+    }
+
     if (el instanceof HTMLImageElement) {
       const input = document.createElement("input");
       input.type = "file";
       input.hidden = true;
-      input.addEventListener("change", async (event) => {
+      input.addEventListener("change", async () => {
         const files = input.files;
         if (!files || !files[0]) return;
 
@@ -92,19 +161,41 @@ const EditablePopovers: React.FC<Props> = ({
   }, [editableElements]);
 
   return ReactDOM.createPortal(
-    positions.map(({ el, top, left }, i) => (
-      <button
+    positions.map(({ el, top, left, type }, i) => (
+      <div
         key={`editable-popover-${i}`}
-        onClick={() => handlePopoverClick(el)}
-        className="absolute z-50 flex items-center justify-center w-7 h-7 rounded-full bg-yellow-200 shadow-md hover:bg-yellow-300 transition"
+        className="absolute z-50 flex flex-col gap-1"
         style={{
           top,
           left: left > 30 ? left - 30 : left,
           transform: "translateX(-50%)",
         }}
       >
-        ✏️
-      </button>
+        {type === "field" && (
+          <button
+            onClick={() => handlePopoverClick(el, type)}
+            className="w-7 h-7 rounded-full bg-yellow-200 shadow-md hover:bg-yellow-300 transition"
+          >
+            ✏️
+          </button>
+        )}
+        {type === "item" && (el.parentElement?.childElementCount ?? 0) > 1 && (
+          <button
+            onClick={() => handlePopoverClick(el, type)}
+            className="w-7 h-7 rounded-full bg-red-200 shadow-md hover:bg-red-300 transition"
+          >
+            ❌
+          </button>
+        )}
+        {type === "group" && (
+          <button
+            onClick={() => handlePopoverClick(el, type)}
+            className="w-7 h-7 rounded-full bg-green-200 shadow-md hover:bg-green-300 transition"
+          >
+            ➕
+          </button>
+        )}
+      </div>
     )),
     document.body
   );

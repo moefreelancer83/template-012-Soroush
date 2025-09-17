@@ -72,7 +72,7 @@ export default function HomeClient() {
         <div className="container mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <AnimatedSection animation="slide-in-left">
-              <h2
+              {/* <h2
                 className="text-4xl md:text-5xl font-playfair font-bold text-navy mb-6"
                 data-x="about.title"
               >
@@ -83,26 +83,27 @@ export default function HomeClient() {
                 data-x="about.content"
               >
                 {about?.content ? about.content.substring(0, 300) + "..." : ""}
-              </p>
-              <div className="space-y-4 mb-8" data-x-group>
+              </p> */}
+              <div className="space-y-4 mb-8" data-x-group="about.values">
                 {Array.isArray(about?.values) &&
                   (about.values as any[]).map((value: any, index) => (
                     <div
                       key={value.title}
                       className="flex items-start space-x-3"
-                      data-x-item
                     >
                       <div className="w-2 h-2 bg-gold rounded-full mt-3 flex-shrink-0"></div>
                       <div>
                         <h4
                           className="font-semibold text-navy"
                           data-x={`about.values.${index}.title`}
+                          data-x-key-in-group="title"
                         >
                           {value.title}
                         </h4>
                         <p
                           className="text-gray-600"
                           data-x={`about.values.${index}.description`}
+                          data-x-key-in-group="description"
                         >
                           {value.description}
                         </p>
@@ -161,7 +162,7 @@ export default function HomeClient() {
             </p>
           </AnimatedSection>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8" data-x-group="team.members">
             {team?.members &&
               team.members.map((member: any, index: number) => (
                 <AnimatedSection
@@ -177,6 +178,7 @@ export default function HomeClient() {
                           alt={member.name}
                           fill
                           className="object-cover"
+                          data-x={`team.members.${index}.photo`}
                         />
                         <div className="absolute inset-0 bg-navy/20 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                           <span className="text-white font-semibold">

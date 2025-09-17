@@ -3,10 +3,16 @@ import { PropsWithChildren, useEffect, useRef, useState } from "react";
 import EditablePopovers from "./editable-popover";
 import useObserveDocument from "./use-observe-document";
 import useAbortController from "./use-abort-controller";
-import { getAllEditableElements, getElementXAttribute } from "./utils";
+import {
+  getAllEditableElementGroupItems,
+  getAllEditableElementGroups,
+  getAllEditableElements,
+  getElementXAttribute,
+} from "./utils";
+import { EditableContentValue } from "./types";
 
 type PropsType = PropsWithChildren<{
-  changeHandler: (changePath: string, newValue: string) => void;
+  changeHandler: (changePath: string, newValue: EditableContentValue) => void;
   imageChangeHandler: (file: File) => Promise<string> | string;
 }>;
 
@@ -48,12 +54,20 @@ const ContentEditable = (props: PropsType) => {
 
   const scanAndAttach = () => {
     const elements = getAllEditableElements();
-
     elements.forEach((element) => {
       makeEditable(element);
     });
 
-    setEditableElements(Array.from(elements) as HTMLElement[]);
+    const groupElements = getAllEditableElementGroups();
+    const groupItemElements = groupElements.flatMap(
+      getAllEditableElementGroupItems
+    );
+
+    setEditableElements([
+      ...groupElements,
+      ...groupItemElements,
+      ...elements,
+    ] as HTMLElement[]);
   };
 
   useObserveDocument({
