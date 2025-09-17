@@ -42,15 +42,16 @@ const HeroSection = ({
       
       {/* Content */}
       <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-6">
-        <h1 className="text-5xl md:text-7xl font-playfair font-bold mb-6 leading-tight">
+        <h1 className="text-5xl md:text-7xl font-playfair font-bold mb-6 leading-tight" data-x="hero.title">
           {title}
         </h1>
-        <p className="text-xl md:text-2xl mb-10 text-gray-200 leading-relaxed max-w-3xl mx-auto">
+        <p className="text-xl md:text-2xl mb-10 text-gray-200 leading-relaxed max-w-3xl mx-auto" data-x="hero.subtitle">
           {subtitle}
         </p>
         <Link
           href="/contact"
           className="inline-block btn-secondary text-xl px-12 py-5"
+          data-x="hero.cta"
         >
           {cta}
         </Link>

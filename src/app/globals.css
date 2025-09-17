@@ -163,10 +163,6 @@
   }
 }
 
-[data-x] {
-  position: relative;
-}
-
-[data-x]::after {
-  @apply border border-red-500 w-10 h-10 absolute ;
+[data-x]:focus{
+  @apply outline-none;
 }

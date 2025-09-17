@@ -1,10 +1,10 @@
-'use client';
+"use client";
 
-import HeroSection from '@/components/HeroSection';
-import AnimatedSection from '@/components/AnimatedSection';
-import Link from 'next/link';
-import Image from 'next/image';
-import { useLanguage } from '@/contexts/LanguageContext';
+import HeroSection from "@/components/HeroSection";
+import AnimatedSection from "@/components/AnimatedSection";
+import Link from "next/link";
+import Image from "next/image";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function HomeClient() {
   const { t } = useLanguage();
@@ -18,10 +18,10 @@ export default function HomeClient() {
     <>
       {/* Hero Section */}
       <HeroSection
-        title={hero?.title || ''}
-        subtitle={hero?.subtitle || ''}
-        cta={hero?.cta || ''}
-        image={hero?.image || ''}
+        title={hero?.title || ""}
+        subtitle={hero?.subtitle || ""}
+        cta={hero?.cta || ""}
+        image={hero?.image || ""}
       />
 
       {/* Services Overview */}
@@ -29,40 +29,39 @@ export default function HomeClient() {
         <div className="container mx-auto px-6">
           <AnimatedSection className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-playfair font-bold text-navy mb-6">
-              {services?.title || ''}
+              {services?.title || ""}
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              {services?.description || ''}
+              {services?.description || ""}
             </p>
           </AnimatedSection>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services?.areas && services.areas.slice(0, 6).map((service: any, index: number) => (
-              <AnimatedSection
-                key={service.title}
-                animation="fade-in"
-                delay={index * 100}
-                className="bg-white p-8 rounded-lg shadow-lg card-hover"
-              >
-                <h3 className="text-xl font-playfair font-bold text-navy mb-4">
-                  {service.title}
-                </h3>
-                <p className="text-gray-600 mb-6">
-                  {service.description}
-                </p>
-                <Link
-                  href="/services"
-                  className="text-gold font-semibold hover:text-yellow-600 transition-colors"
+            {services?.areas &&
+              services.areas.slice(0, 6).map((service: any, index: number) => (
+                <AnimatedSection
+                  key={service.title}
+                  animation="fade-in"
+                  delay={index * 100}
+                  className="bg-white p-8 rounded-lg shadow-lg card-hover"
                 >
-                  {services?.learnMoreText || 'Learn More →'}
-                </Link>
-              </AnimatedSection>
-            ))}
+                  <h3 className="text-xl font-playfair font-bold text-navy mb-4">
+                    {service.title}
+                  </h3>
+                  <p className="text-gray-600 mb-6">{service.description}</p>
+                  <Link
+                    href="/services"
+                    className="text-gold font-semibold hover:text-yellow-600 transition-colors"
+                  >
+                    {services?.learnMoreText || "Learn More →"}
+                  </Link>
+                </AnimatedSection>
+              ))}
           </div>
 
           <AnimatedSection className="text-center mt-16">
             <Link href="/services" className="btn-primary">
-              {services?.viewAllText || 'View All Services'}
+              {services?.viewAllText || "View All Services"}
             </Link>
           </AnimatedSection>
         </div>
@@ -73,40 +72,76 @@ export default function HomeClient() {
         <div className="container mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <AnimatedSection animation="slide-in-left">
-              <h2 className="text-4xl md:text-5xl font-playfair font-bold text-navy mb-6">
-                {about?.title || ''}
+              <h2
+                className="text-4xl md:text-5xl font-playfair font-bold text-navy mb-6"
+                data-x="about.title"
+              >
+                {about?.title || ""}
               </h2>
-              <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                {about?.content ? about.content.substring(0, 300) + '...' : ''}
+              <p
+                className="text-lg text-gray-600 mb-8 leading-relaxed"
+                data-x="about.content"
+              >
+                {about?.content ? about.content.substring(0, 300) + "..." : ""}
               </p>
-              <div className="space-y-4 mb-8">
-                {about?.values && about.values.map((value: any) => (
-                  <div key={value.title} className="flex items-start space-x-3">
-                    <div className="w-2 h-2 bg-gold rounded-full mt-3 flex-shrink-0"></div>
-                    <div>
-                      <h4 className="font-semibold text-navy">{value.title}</h4>
-                      <p className="text-gray-600">{value.description}</p>
+              <div className="space-y-4 mb-8" data-x-group>
+                {Array.isArray(about?.values) &&
+                  (about.values as any[]).map((value: any, index) => (
+                    <div
+                      key={value.title}
+                      className="flex items-start space-x-3"
+                      data-x-item
+                    >
+                      <div className="w-2 h-2 bg-gold rounded-full mt-3 flex-shrink-0"></div>
+                      <div>
+                        <h4
+                          className="font-semibold text-navy"
+                          data-x={`about.values.${index}.title`}
+                        >
+                          {value.title}
+                        </h4>
+                        <p
+                          className="text-gray-600"
+                          data-x={`about.values.${index}.description`}
+                        >
+                          {value.description}
+                        </p>
+                      </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
               </div>
-              <Link href="/about" className="btn-primary">
-                {about?.learnMoreText || 'Learn More'}
+              <Link
+                href="/about"
+                className="btn-primary"
+                data-x="about.learnMoreText"
+              >
+                {about?.learnMoreText || "Learn More"}
               </Link>
             </AnimatedSection>
 
             <AnimatedSection animation="slide-in-right">
               <div className="relative">
                 <Image
-                  src={about?.officeImage || '/placeholder.jpg'}
-                  alt={about?.officeImageAlt || 'Office'}
+                  src={about?.officeImage || "/placeholder.jpg"}
+                  alt={about?.officeImageAlt || "Office"}
                   width={600}
                   height={400}
                   className="rounded-lg shadow-xl"
+                  data-x="about.officeImage"
                 />
                 <div className="absolute -bottom-6 -right-6 bg-navy text-white p-6 rounded-lg">
-                  <div className="text-3xl font-playfair font-bold text-gold">{about?.yearsOfExcellence || '35+'}</div>
-                  <div className="text-sm">{about?.yearsOfExcellenceLabel || 'Years of Excellence'}</div>
+                  <div
+                    className="text-3xl font-playfair font-bold text-gold"
+                    data-x="about.yearsOfExcellence"
+                  >
+                    {about?.yearsOfExcellence || "35+"}
+                  </div>
+                  <div
+                    className="text-sm"
+                    data-x="about.yearsOfExcellenceLabel"
+                  >
+                    {about?.yearsOfExcellenceLabel || "Years of Excellence"}
+                  </div>
                 </div>
               </div>
             </AnimatedSection>
@@ -119,51 +154,56 @@ export default function HomeClient() {
         <div className="container mx-auto px-6">
           <AnimatedSection className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-playfair font-bold text-navy mb-6">
-              {team?.title || ''}
+              {team?.title || ""}
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              {team?.description || ''}
+              {team?.description || ""}
             </p>
           </AnimatedSection>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {team?.members && team.members.map((member: any, index: number) => (
-              <AnimatedSection
-                key={member.slug}
-                animation="fade-in"
-                delay={index * 150}
-              >
-                <Link href={`/team/${member.slug}`} className="block">
-                  <div className="bg-white rounded-lg shadow-lg overflow-hidden card-hover">
-                    <div className="aspect-square relative">
-                      <Image
-                        src={member.photo}
-                        alt={member.name}
-                        fill
-                        className="object-cover"
-                      />
-                      <div className="absolute inset-0 bg-navy/20 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                        <span className="text-white font-semibold">{team?.viewProfileText || 'View Profile'}</span>
+            {team?.members &&
+              team.members.map((member: any, index: number) => (
+                <AnimatedSection
+                  key={member.slug}
+                  animation="fade-in"
+                  delay={index * 150}
+                >
+                  <Link href={`/team/${member.slug}`} className="block">
+                    <div className="bg-white rounded-lg shadow-lg overflow-hidden card-hover">
+                      <div className="aspect-square relative">
+                        <Image
+                          src={member.photo}
+                          alt={member.name}
+                          fill
+                          className="object-cover"
+                        />
+                        <div className="absolute inset-0 bg-navy/20 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                          <span className="text-white font-semibold">
+                            {team?.viewProfileText || "View Profile"}
+                          </span>
+                        </div>
+                      </div>
+                      <div className="p-6">
+                        <h3 className="text-xl font-playfair font-bold text-navy mb-2">
+                          {member.name}
+                        </h3>
+                        <p className="text-gold font-semibold mb-3">
+                          {member.title}
+                        </p>
+                        <p className="text-gray-600 text-sm">
+                          {member.shortBio}
+                        </p>
                       </div>
                     </div>
-                    <div className="p-6">
-                      <h3 className="text-xl font-playfair font-bold text-navy mb-2">
-                        {member.name}
-                      </h3>
-                      <p className="text-gold font-semibold mb-3">{member.title}</p>
-                      <p className="text-gray-600 text-sm">
-                        {member.shortBio}
-                      </p>
-                    </div>
-                  </div>
-                </Link>
-              </AnimatedSection>
-            ))}
+                  </Link>
+                </AnimatedSection>
+              ))}
           </div>
 
           <AnimatedSection className="text-center mt-16">
             <Link href="/team" className="btn-primary">
-              {team?.meetFullTeamText || 'Meet Our Full Team'}
+              {team?.meetFullTeamText || "Meet Our Full Team"}
             </Link>
           </AnimatedSection>
         </div>
@@ -174,20 +214,20 @@ export default function HomeClient() {
         <div className="container mx-auto px-6 text-center">
           <AnimatedSection>
             <h2 className="text-4xl md:text-5xl font-playfair font-bold mb-6">
-              {cta?.homeTitle || ''}
+              {cta?.homeTitle || ""}
             </h2>
             <p className="text-xl text-gray-300 mb-10 max-w-3xl mx-auto">
-              {cta?.homeDescription || ''}
+              {cta?.homeDescription || ""}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact" className="btn-secondary">
-                {cta?.scheduleConsultationText || 'Schedule Consultation'}
+                {cta?.scheduleConsultationText || "Schedule Consultation"}
               </Link>
-              <Link 
-                href={`tel:${contact?.phone || ''}`}
+              <Link
+                href={`tel:${contact?.phone || ""}`}
                 className="btn-primary border-2 border-white hover:bg-white hover:text-navy"
               >
-                {cta?.callPrefix || 'Call'} {contact?.phone || ''}
+                {cta?.callPrefix || "Call"} {contact?.phone || ""}
               </Link>
             </div>
           </AnimatedSection>
