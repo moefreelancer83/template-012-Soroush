@@ -179,6 +179,7 @@ export default function HomeClient() {
                           fill
                           className="object-cover"
                           data-x={`team.members.${index}.photo`}
+                          data-x-key-in-group="photo"
                         />
                         <div className="absolute inset-0 bg-navy/20 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                           <span className="text-white font-semibold">
@@ -187,13 +188,13 @@ export default function HomeClient() {
                         </div>
                       </div>
                       <div className="p-6">
-                        <h3 className="text-xl font-playfair font-bold text-navy mb-2">
+                        <h3 className="text-xl font-playfair font-bold text-navy mb-2" data-x={`team.members.${index}.name`} data-x-key-in-group="name">
                           {member.name}
                         </h3>
-                        <p className="text-gold font-semibold mb-3">
+                        <p className="text-gold font-semibold mb-3" data-x={`team.members.${index}.title`} data-x-key-in-group="title">
                           {member.title}
                         </p>
-                        <p className="text-gray-600 text-sm">
+                        <p className="text-gray-600 text-sm" data-x={`team.members.${index}.shortBio`} data-x-key-in-group="shortBio">
                           {member.shortBio}
                         </p>
                       </div>

@@ -5,15 +5,20 @@ import Footer from "@/components/Footer";
 import { useLanguage } from "@/contexts/LanguageContext";
 import ContentEditable from "@/lib/content-editable/content-editable";
 
+import _ from "lodash";
+
 export function LayoutClient({ children }: { children: React.ReactNode }) {
-  const { t } = useLanguage();
+  const { t, setTemplateData, language } = useLanguage();
+
+  console.log({ "app data": t, language });
 
   return (
     <ContentEditable
       imageChangeHandler={URL.createObjectURL}
       changeHandler={(path, value) => {
-        console.log({ path, value });
-        // _.set(t, path, value)
+        setTemplateData((prev) => {
+          return _.set(structuredClone(prev), `${language}.${path}`, value);
+        });
       }}
     >
       <Navigation navigation={t?.navigation || {}} />

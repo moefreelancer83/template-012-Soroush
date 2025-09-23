@@ -1,8 +1,15 @@
-'use client';
+"use client";
 
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, {
+  createContext,
+  useContext,
+  useState,
+  useEffect,
+  Dispatch,
+  SetStateAction,
+} from "react";
 
-type Language = 'de' | 'en';
+type Language = "de" | "en";
 
 interface LanguageContextType {
   language: Language;
@@ -10,32 +17,41 @@ interface LanguageContextType {
   t: any;
   showCookieBannerTrigger: boolean;
   triggerCookieBanner: () => void;
+  setTemplateData: Dispatch<SetStateAction<Record<string, unknown>>>;
 }
 
-const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
+const LanguageContext = createContext<LanguageContextType | undefined>(
+  undefined
+);
 
 interface LanguageProviderProps {
   children: React.ReactNode;
-  templateData: any;  // Now required, not optional
+  templateData: any; // Now required, not optional
 }
 
-export function LanguageProvider({ children, templateData }: LanguageProviderProps) {
-  const [language, setLanguage] = useState<Language>('de');
+export function LanguageProvider({
+  children,
+  templateData,
+}: LanguageProviderProps) {
+  const [language, setLanguage] = useState<Language>("de");
   const [showCookieBannerTrigger, setShowCookieBannerTrigger] = useState(false);
-  
-  // Use provided templateData with fallback
-  const data = templateData || { de: {}, en: {} };
+  const [templateDataState, setTemplateDataState] =
+    useState<Record<string, unknown>>(templateData);
 
   useEffect(() => {
-    const savedLanguage = localStorage.getItem('language') as Language;
-    if (savedLanguage && (savedLanguage === 'de' || savedLanguage === 'en')) {
+    const savedLanguage = localStorage.getItem("language") as Language;
+    if (savedLanguage && (savedLanguage === "de" || savedLanguage === "en")) {
       setLanguage(savedLanguage);
     }
   }, []);
 
+  useEffect(() => {
+    setTemplateDataState(templateData);
+  }, [templateData]);
+
   const handleSetLanguage = (lang: Language) => {
     setLanguage(lang);
-    localStorage.setItem('language', lang);
+    localStorage.setItem("language", lang);
   };
 
   const triggerCookieBanner = () => {
@@ -44,16 +60,22 @@ export function LanguageProvider({ children, templateData }: LanguageProviderPro
     setTimeout(() => setShowCookieBannerTrigger(false), 100);
   };
 
-  const t = data[language] || {};
+  const t = templateDataState[language] || {};
+
+  console.log({t});
+  
 
   return (
-    <LanguageContext.Provider value={{ 
-      language, 
-      setLanguage: handleSetLanguage, 
-      t, 
-      showCookieBannerTrigger, 
-      triggerCookieBanner 
-    }}>
+    <LanguageContext.Provider
+      value={{
+        language,
+        setLanguage: handleSetLanguage,
+        t,
+        showCookieBannerTrigger,
+        triggerCookieBanner,
+        setTemplateData: setTemplateDataState,
+      }}
+    >
       {children}
     </LanguageContext.Provider>
   );
@@ -62,7 +84,7 @@ export function LanguageProvider({ children, templateData }: LanguageProviderPro
 export function useLanguage() {
   const context = useContext(LanguageContext);
   if (context === undefined) {
-    throw new Error('useLanguage must be used within a LanguageProvider');
+    throw new Error("useLanguage must be used within a LanguageProvider");
   }
   return context;
 }

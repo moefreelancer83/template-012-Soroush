@@ -147,6 +147,8 @@ const EditablePopovers: React.FC<Props> = ({
     };
   }, [editableElements]);
 
+  if (!("document" in global)) return;
+
   return ReactDOM.createPortal(
     positions.map(({ el, top, left, type }, i) => (
       <EditButton
@@ -158,7 +160,7 @@ const EditablePopovers: React.FC<Props> = ({
         showRemoveButton={(el.parentElement?.childElementCount ?? 0) > 1}
       />
     )),
-    document.body
+    global.document.body
   );
 };
 
