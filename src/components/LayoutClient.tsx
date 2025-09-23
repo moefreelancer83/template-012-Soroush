@@ -8,7 +8,7 @@ import ContentEditable from "@/lib/content-editable/content-editable";
 import _ from "lodash";
 
 export function LayoutClient({ children }: { children: React.ReactNode }) {
-  const { t, setTemplateData, language } = useLanguage();
+  const { t, setT, language } = useLanguage();
 
   console.log({ "app data": t, language });
 
@@ -16,9 +16,7 @@ export function LayoutClient({ children }: { children: React.ReactNode }) {
     <ContentEditable
       imageChangeHandler={URL.createObjectURL}
       changeHandler={(path, value) => {
-        setTemplateData((prev) => {
-          return _.set(structuredClone(prev), `${language}.${path}`, value);
-        });
+        setT((prev: any) => _.set(structuredClone(prev), path, value));
       }}
     >
       <Navigation navigation={t?.navigation || {}} />

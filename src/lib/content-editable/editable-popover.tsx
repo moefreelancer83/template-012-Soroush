@@ -71,10 +71,13 @@ const EditablePopovers: React.FC<Props> = ({
 
     if (!lastItem) return;
 
-    const newItem = lastItem.cloneNode(true) as HTMLElement;
-    el.appendChild(newItem);
+    const previousGroupArray = groupElementToArray(el);
 
-    const newGroupArray = groupElementToArray(el);
+    const newGroupArray = [
+      ...previousGroupArray,
+      previousGroupArray[previousGroupArray.length - 1],
+    ];
+    
     changeHandler(getElementXGroupAttribute(el), newGroupArray);
 
     updatePositions();
@@ -86,12 +89,13 @@ const EditablePopovers: React.FC<Props> = ({
 
     if (parentGroup.childElementCount === 1) return;
 
-    el.remove();
+    const childIndex = Array.from(parentGroup.children).indexOf(el);
 
-    changeHandler(
-      getElementXGroupAttribute(parentGroup),
-      groupElementToArray(parentGroup)
+    const newGroupArray = groupElementToArray(parentGroup).filter(
+      (_, index) => index !== childIndex
     );
+
+    changeHandler(getElementXGroupAttribute(parentGroup), newGroupArray);
 
     updatePositions();
   };

@@ -17,7 +17,7 @@ interface LanguageContextType {
   t: any;
   showCookieBannerTrigger: boolean;
   triggerCookieBanner: () => void;
-  setTemplateData: Dispatch<SetStateAction<Record<string, unknown>>>;
+  setT: (setter: (prev: unknown) => unknown) => void;
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(
@@ -62,8 +62,14 @@ export function LanguageProvider({
 
   const t = templateDataState[language] || {};
 
-  console.log({t});
-  
+  const setT = (setter: (prev: unknown) => unknown) => {
+    setTemplateDataState((prev) => {
+      const newData = structuredClone(prev);
+      newData[language] = setter(newData[language] ?? {});
+
+      return newData;
+    });
+  };
 
   return (
     <LanguageContext.Provider
@@ -73,7 +79,7 @@ export function LanguageProvider({
         t,
         showCookieBannerTrigger,
         triggerCookieBanner,
-        setTemplateData: setTemplateDataState,
+        setT,
       }}
     >
       {children}

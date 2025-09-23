@@ -88,7 +88,7 @@ export default function HomeClient() {
                 {Array.isArray(about?.values) &&
                   (about.values as any[]).map((value: any, index) => (
                     <div
-                      key={value.title}
+                      key={value.title + index}
                       className="flex items-start space-x-3"
                     >
                       <div className="w-2 h-2 bg-gold rounded-full mt-3 flex-shrink-0"></div>
@@ -166,7 +166,7 @@ export default function HomeClient() {
             {team?.members &&
               team.members.map((member: any, index: number) => (
                 <AnimatedSection
-                  key={member.slug}
+                  key={member.slug + index}
                   animation="fade-in"
                   delay={index * 150}
                 >

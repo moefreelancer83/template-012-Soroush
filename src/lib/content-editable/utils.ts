@@ -32,7 +32,9 @@ export const groupElementToArray = (
     Object.fromEntries(
       getAllGroupElementFields(groupItem).map((fieldElement) => [
         getElementXGroupKeyAttribute(fieldElement),
-        fieldElement.innerText ?? "",
+        fieldElement instanceof HTMLImageElement
+          ? fieldElement.src
+          : fieldElement.innerText ?? "",
       ])
     )
   );
