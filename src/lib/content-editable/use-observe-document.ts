@@ -88,15 +88,17 @@ const useObserveDocument = ({
       characterData: true,
     });
 
+    scanAndAttach()
+
     return () => {
       getAllEditableElements().forEach((element) => {
         element.removeEventListener("blur", blurHandler);
         element.removeEventListener("keydown", keydownHandler);
       });
-      
+
       observerRef.current?.disconnect();
     };
-  }, []);
+  }, [changeHandler, setEditableElements]);
 };
 
 export default useObserveDocument;

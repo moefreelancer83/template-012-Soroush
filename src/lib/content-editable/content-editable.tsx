@@ -31,3 +31,7 @@ const ContentEditable = (props: PropsType) => {
 };
 
 export default ContentEditable;
+export type {
+  PropsType as ContentEditableProps,
+  DataChangeHandler as ChangeHandler,
+};

@@ -3,24 +3,34 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { useLanguage } from "@/contexts/LanguageContext";
-import ContentEditable from "@/lib/content-editable/content-editable";
+import ContentEditable, {
+  ChangeHandler,
+} from "@/lib/content-editable/content-editable";
 
 import _ from "lodash";
+import { useCallback } from "react";
 
 export function LayoutClient({ children }: { children: React.ReactNode }) {
   const { t, setT, language } = useLanguage();
 
   console.log({ "app data": t, language });
 
+  const changeHandler = useCallback<ChangeHandler>(
+    (path, value) => {
+      setT((prev: any) => _.set(structuredClone(prev), path, value));
+    },
+    [setT]
+  );
+
   return (
     <ContentEditable
       imageChangeHandler={URL.createObjectURL}
-      changeHandler={(path, value) => {
-        setT((prev: any) => _.set(structuredClone(prev), path, value));
-      }}
+      changeHandler={changeHandler}
     >
       <Navigation navigation={t?.navigation || {}} />
-      <main>{children}</main>
+      <main onClick={() => console.log("lang in click", language)}>
+        {children}
+      </main>
       <Footer footer={t?.footer || {}} contact={t?.contact || {}} />
     </ContentEditable>
   );

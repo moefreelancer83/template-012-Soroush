@@ -5,8 +5,7 @@ import React, {
   useContext,
   useState,
   useEffect,
-  Dispatch,
-  SetStateAction,
+  useCallback,
 } from "react";
 
 type Language = "de" | "en";
@@ -62,14 +61,20 @@ export function LanguageProvider({
 
   const t = templateDataState[language] || {};
 
-  const setT = (setter: (prev: unknown) => unknown) => {
-    setTemplateDataState((prev) => {
-      const newData = structuredClone(prev);
-      newData[language] = setter(newData[language] ?? {});
+  const setT = useCallback(
+    (setter: (prev: unknown) => unknown) => {
+      setTemplateDataState((prev) => {
+        const newData = structuredClone(prev);
+        console.log({ "language in setter": language });
 
-      return newData;
-    });
-  };
+        newData[language] = setter(newData[language] ?? {});
+
+        return newData;
+      });
+    },
+    [language]
+  );
+
 
   return (
     <LanguageContext.Provider

@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
 import ReactDOM from "react-dom";
 import {
   getAllEditableElementGroupItems,
@@ -32,7 +32,7 @@ const EditablePopovers: React.FC<Props> = ({
     }[]
   >([]);
 
-  const updatePositions = () => {
+  const updatePositions = useCallback(() => {
     setPositions(
       editableElements.map((el) => {
         let left = getTextStart(el);
@@ -63,7 +63,7 @@ const EditablePopovers: React.FC<Props> = ({
         };
       })
     );
-  };
+  }, [editableElements]);
 
   const handleGroupAddItem = (el: HTMLElement) => {
     const items = getAllEditableElementGroupItems(el);
@@ -73,11 +73,12 @@ const EditablePopovers: React.FC<Props> = ({
 
     const previousGroupArray = groupElementToArray(el);
 
-    const newGroupArray = [
-      ...previousGroupArray,
-      previousGroupArray[previousGroupArray.length - 1],
-    ];
-    
+    const lastGroupElement = structuredClone(
+      previousGroupArray[previousGroupArray.length - 1]
+    );
+
+    const newGroupArray = [...previousGroupArray, lastGroupElement];
+
     changeHandler(getElementXGroupAttribute(el), newGroupArray);
 
     updatePositions();
@@ -149,7 +150,7 @@ const EditablePopovers: React.FC<Props> = ({
       window.removeEventListener("scroll", updatePositions);
       window.removeEventListener("resize", updatePositions);
     };
-  }, [editableElements]);
+  }, [editableElements, changeHandler, updatePositions]);
 
   if (!("document" in global)) return;
 
