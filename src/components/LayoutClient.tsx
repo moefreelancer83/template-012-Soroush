@@ -8,12 +8,14 @@ import ContentEditable, {
 } from "@/lib/content-editable/content-editable";
 
 import _ from "lodash";
-import { useCallback } from "react";
+import { useCallback, useEffect } from "react";
 
 export function LayoutClient({ children }: { children: React.ReactNode }) {
-  const { t, setT, language } = useLanguage();
+  const { t, setT, language, templateData } = useLanguage();
 
-  console.log({ "app data": t, language });
+  useEffect(() => {
+    console.log({ "app data": templateData });
+  }, [templateData]);
 
   const changeHandler = useCallback<ChangeHandler>(
     (path, value) => {
