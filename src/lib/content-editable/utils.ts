@@ -1,3 +1,5 @@
+import { EditableElementType } from "./types";
+
 export const getElementXAttribute = (element: Element) =>
   element.getAttribute("data-x") ?? "";
 
@@ -58,3 +60,17 @@ export const getTextStart = (el: HTMLElement, prevLeft?: number) => {
     return fallbackPosition;
   }
 };
+
+export const getElementIconName = (el: HTMLElement) => el.getAttribute('data-x-icon');
+
+export const getIsElementIcon = (el: HTMLElement): boolean => !!getElementIconName(el);
+
+
+
+export const getPopoverTypeFromElement = (el: HTMLElement): EditableElementType => {
+  if (el.hasAttribute("data-x-group")) return "group";
+  if (el.parentElement?.hasAttribute("data-x-group")) return "item";
+  if (el instanceof HTMLImageElement) return "image";
+  if (getIsElementIcon(el)) return "icon";
+  return "field";
+}

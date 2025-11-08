@@ -5,6 +5,7 @@ import AnimatedSection from "@/components/AnimatedSection";
 import Link from "next/link";
 import Image from "next/image";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { Icon } from "@/lib/content-editable";
 
 export default function HomeClient() {
   const { t } = useLanguage();
@@ -162,7 +163,14 @@ export default function HomeClient() {
             </p>
           </AnimatedSection>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8" data-x-group="team.members">
+          <div data-x="team.iconName" className="p-5" data-x-icon={team?.iconName || "a-arrow-down"}>
+            <Icon name={team?.iconName || "a-arrow-down"} />
+          </div>
+
+          <div
+            className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
+            data-x-group="team.members"
+          >
             {team?.members &&
               team.members.map((member: any, index: number) => (
                 <AnimatedSection

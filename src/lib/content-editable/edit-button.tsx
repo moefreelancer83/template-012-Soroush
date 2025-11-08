@@ -24,7 +24,6 @@ const EditButton = ({
         top: top > POSITION_PRECISION / 2 ? top - POSITION_PRECISION / 2 : top,
       }}
     >
-      <button></button>
       {type === "field" && (
         <button
           onClick={onClick}
@@ -47,6 +46,22 @@ const EditButton = ({
           className="w-7 h-7 rounded-full bg-green-200 hover:bg-green-300 transition"
         >
           ➕
+        </button>
+      )}
+      {type === "icon" && (
+        <button
+          onClick={onClick}
+          className="w-7 h-7 rounded-full bg-blue-200 hover:bg-blue-300 transition"
+        >
+          🎨
+        </button>
+      )}
+      {type === "image" && (
+        <button
+          onClick={onClick}
+          className="w-7 h-7 rounded-full bg-purple-200 hover:bg-purple-300 transition"
+        >
+          🖼️
         </button>
       )}
     </div>

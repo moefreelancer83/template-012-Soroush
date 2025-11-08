@@ -3,9 +3,7 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { useLanguage } from "@/contexts/LanguageContext";
-import ContentEditable, {
-  ChangeHandler,
-} from "@/lib/content-editable/content-editable";
+import { ContentEditable, ChangeHandler } from "@/lib/content-editable";
 
 import _ from "lodash";
 import { useCallback, useEffect } from "react";

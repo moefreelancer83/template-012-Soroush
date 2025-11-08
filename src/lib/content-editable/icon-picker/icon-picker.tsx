@@ -1,47 +1,57 @@
 import _ from "lodash";
-import React, { useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
+import Fuse from "fuse.js";
 
-import dynamicIconImports from "lucide-react/dynamicIconImports";
-import Icon from "./icon";
+import { useDebounce } from "use-debounce";
+import { Grid } from "react-window";
 
-type IconName = keyof typeof dynamicIconImports;
-
-const iconsList = Object.keys(dynamicIconImports) as IconName[];
+import IconPickerIconItem from "./icon-picker-icon-item";
+import { iconsList } from "./icons-list";
 
 type IconPickerProps = {
   value?: string;
   onChange: (iconName: string) => void;
-  variant?: "solid" | "outline";
+  isOpen: boolean;
+  setIsOpen: (open: boolean) => void;
 };
+
+const ICON_PICKER_COLUMN_COUNT = 4;
+const ICON_PICKER_ITEM_HEIGHT = 80;
+const ICON_PICKER_ITEM_WIDTH = 100;
 
 const IconPicker: React.FC<IconPickerProps> = ({
   value,
   onChange,
-  variant = "outline",
+  isOpen,
+  setIsOpen,
 }) => {
-  const [isOpen, setIsOpen] = useState(false);
   const [search, setSearch] = useState("");
 
-  const SelectedIcon = "";
-  // value && (LucideIcons as Record<string, React.FC<any>>)[value];
+  const [debouncedSearch] = useDebounce(search, 500);
+
+  const filteredIcons = useMemo(() => {
+    if (!debouncedSearch || debouncedSearch.trim() === "") {
+      return iconsList;
+    }
+    const fuse = new Fuse(iconsList, {
+      threshold: 0.2,
+      includeScore: true,
+    });
+
+    return fuse.search(debouncedSearch).map((result) => result.item);
+  }, [debouncedSearch]);
+
+  const rowCount = Math.ceil(filteredIcons.length / ICON_PICKER_COLUMN_COUNT);
 
   return (
     <>
-      <button
-        onClick={() => setIsOpen(true)}
-        className="flex items-center gap-2 border rounded-lg px-3 py-2 hover:bg-gray-100 transition"
-      >
-        {/* {SelectedIcon ? <SelectedIcon size={18} /> : null} */}
-        <span>{value || "Select Icon"}</span>
-      </button>
-
       {isOpen && (
         <div
           className="fixed inset-0 bg-black/40 flex items-center justify-center z-50"
           onClick={() => setIsOpen(false)}
         >
           <div
-            className="bg-white rounded-xl shadow-lg w-full max-w-lg p-4"
+            className="bg-white rounded-xl shadow-lg max-w-lg p-4 w-[450px]"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex justify-between items-center mb-3">
@@ -62,26 +72,22 @@ const IconPicker: React.FC<IconPickerProps> = ({
               className="w-full border rounded-md px-3 py-2 mb-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
 
-            <div className="grid grid-cols-4 gap-3 max-h-[400px] overflow-y-auto">
-              {iconsList?.slice(0, 10).map((name) => (
-                <button
-                  key={name}
-                  onClick={() => {
-                    onChange(name);
-                    setIsOpen(false);
-                  }}
-                  className={`flex flex-col items-center justify-center p-2 rounded-lg border hover:bg-gray-100 transition ${
-                    value === name
-                      ? "bg-gray-200 border-gray-400"
-                      : "border-gray-200"
-                  }`}
-                >
-                  <Icon name={name} />
-                  <span className="text-xs mt-1 truncate whitespace-break-spaces">
-                    {_.startCase(name)}
-                  </span>
-                </button>
-              ))}
+            <div className="border rounded-md overflow-hidden h-[400px] w-[418px]">
+              <Grid
+                className="grid grid-cols-4 w-[430px] !overflow-x-hidden scrollbar-modern"
+                columnCount={ICON_PICKER_COLUMN_COUNT}
+                columnWidth={ICON_PICKER_ITEM_WIDTH}
+                rowCount={rowCount}
+                rowHeight={ICON_PICKER_ITEM_HEIGHT}
+                cellComponent={IconPickerIconItem}
+                cellProps={{
+                  columnCount: ICON_PICKER_COLUMN_COUNT,
+                  icons: filteredIcons,
+                  onChange,
+                  setIsOpen,
+                  value,
+                }}
+              />
             </div>
           </div>
         </div>
