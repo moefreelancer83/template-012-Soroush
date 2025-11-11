@@ -43,6 +43,17 @@ const IconPicker: React.FC<IconPickerProps> = ({
 
   const rowCount = Math.ceil(filteredIcons.length / ICON_PICKER_COLUMN_COUNT);
 
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isOpen]);
   return (
     <>
       {isOpen && (
@@ -68,26 +79,33 @@ const IconPicker: React.FC<IconPickerProps> = ({
               type="text"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
+              autoFocus={true}
               placeholder="Search icons..."
               className="w-full border rounded-md px-3 py-2 mb-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
 
             <div className="border rounded-md overflow-hidden h-[400px] w-[418px]">
-              <Grid
-                className="grid grid-cols-4 w-[430px] !overflow-x-hidden scrollbar-modern"
-                columnCount={ICON_PICKER_COLUMN_COUNT}
-                columnWidth={ICON_PICKER_ITEM_WIDTH}
-                rowCount={rowCount}
-                rowHeight={ICON_PICKER_ITEM_HEIGHT}
-                cellComponent={IconPickerIconItem}
-                cellProps={{
-                  columnCount: ICON_PICKER_COLUMN_COUNT,
-                  icons: filteredIcons,
-                  onChange,
-                  setIsOpen,
-                  value,
-                }}
-              />
+              {filteredIcons.length ? (
+                <Grid
+                  className="grid grid-cols-4 w-[430px] !overflow-x-hidden scrollbar-modern"
+                  columnCount={ICON_PICKER_COLUMN_COUNT}
+                  columnWidth={ICON_PICKER_ITEM_WIDTH}
+                  rowCount={rowCount}
+                  rowHeight={ICON_PICKER_ITEM_HEIGHT}
+                  cellComponent={IconPickerIconItem}
+                  cellProps={{
+                    columnCount: ICON_PICKER_COLUMN_COUNT,
+                    icons: filteredIcons,
+                    onChange,
+                    setIsOpen,
+                    value,
+                  }}
+                />
+              ) : (
+                <div className="flex items-center justify-center h-full text-gray-500">
+                  No icons found.
+                </div>
+              )}
             </div>
           </div>
         </div>

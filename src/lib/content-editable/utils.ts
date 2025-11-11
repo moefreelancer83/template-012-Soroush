@@ -74,3 +74,5 @@ export const getPopoverTypeFromElement = (el: HTMLElement): EditableElementType 
   if (getIsElementIcon(el)) return "icon";
   return "field";
 }
+
+export const getFirstXSectionParent = (el: HTMLElement): HTMLElement | null => el.closest('[data-x-section]');

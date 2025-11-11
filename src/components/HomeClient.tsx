@@ -152,7 +152,7 @@ export default function HomeClient() {
       </section>
 
       {/* Team Preview */}
-      <section className="py-20 bg-light-gold">
+      <section className="py-20 bg-light-gold" data-x-section="team">
         <div className="container mx-auto px-6">
           <AnimatedSection className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-playfair font-bold text-navy mb-6">
@@ -162,10 +162,6 @@ export default function HomeClient() {
               {team?.description || ""}
             </p>
           </AnimatedSection>
-
-          <div data-x="team.iconName" className="p-5" data-x-icon={team?.iconName || "a-arrow-down"}>
-            <Icon name={team?.iconName || "a-arrow-down"} />
-          </div>
 
           <div
             className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"

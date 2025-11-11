@@ -59,3 +59,6 @@ Example:
 
 
 ```
+
+#### data-x-section
+In order to make edit buttons visible only when hovered on their section, this attribute should be added to their container section. The value of this attribute does not matter yet.

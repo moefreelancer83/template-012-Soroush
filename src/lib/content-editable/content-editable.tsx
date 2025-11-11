@@ -2,15 +2,17 @@
 import { PropsWithChildren, useEffect, useRef, useState } from "react";
 import EditablePopovers from "./editable-popover";
 import useObserveDocument from "./use-observe-document";
-import { DataChangeHandler, EditableContentValue } from "./types";
-
+import { DataChangeHandler, EditableContentValue, EditableElementData } from "./types";
+import "./styles.css";
 type PropsType = PropsWithChildren<{
   changeHandler: DataChangeHandler;
   imageChangeHandler: (file: File) => Promise<string> | string;
 }>;
 
 const ContentEditable = (props: PropsType) => {
-  const [editableElements, setEditableElements] = useState<HTMLElement[]>([]);
+  const [editableElements, setEditableElements] = useState<
+    EditableElementData[]
+  >([]);
 
   useObserveDocument({
     changeHandler: props.changeHandler,

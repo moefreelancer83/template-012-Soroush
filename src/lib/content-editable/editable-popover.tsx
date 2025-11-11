@@ -17,7 +17,10 @@ import EditButton from "./edit-button";
 import IconPicker from "./icon-picker/icon-picker";
 
 type Props = {
-  editableElements: HTMLElement[];
+  editableElements: {
+    element: HTMLElement;
+    parentSection: HTMLElement | null;
+  }[];
   imageChangeHandler: (file: File) => Promise<string> | string;
   changeHandler: (changePath: string, newValue: EditableContentValue) => void;
 };
@@ -27,6 +30,7 @@ type Popover = {
   top: number;
   left: number;
   type: EditableElementType;
+  parentSection: HTMLElement | null;
 };
 
 const EditablePopovers: React.FC<Props> = ({
@@ -35,17 +39,20 @@ const EditablePopovers: React.FC<Props> = ({
   changeHandler,
 }) => {
   const [popovers, setPopovers] = useState<Popover[]>([]);
+  const [popoversVisibleState, setPopoversVisibleState] = useState(
+    new Map<HTMLElement, boolean>()
+  );
 
   const [iconPickerCurrentFocusedElement, setIconPickerCurrentFocusedElement] =
     useState<null | { elementName: string; elementCurrentIcon: string }>(null);
 
   const updatePositions = useCallback(() => {
     setPopovers(
-      editableElements.map((el) => {
-        let left = getTextStart(el);
-        let top = el.getBoundingClientRect().y + window.scrollY;
+      editableElements.map(({ element, parentSection }) => {
+        let left = getTextStart(element);
+        let top = element.getBoundingClientRect().y + window.scrollY;
 
-        const type = getPopoverTypeFromElement(el);
+        const type = getPopoverTypeFromElement(element);
 
         switch (type) {
           case "group":
@@ -59,10 +66,11 @@ const EditablePopovers: React.FC<Props> = ({
         }
 
         return {
-          el,
+          el: element,
           top,
           left,
           type,
+          parentSection,
         };
       })
     );
@@ -169,6 +177,68 @@ const EditablePopovers: React.FC<Props> = ({
     };
   }, [editableElements, changeHandler, updatePositions]);
 
+  useEffect(() => {
+    const parentSectionToChildPopovers = new Map<
+      HTMLElement | null,
+      Popover[]
+    >();
+
+    popovers.forEach((popover) => {
+      parentSectionToChildPopovers.set(popover.parentSection, [
+        ...(parentSectionToChildPopovers.get(popover.parentSection) || []),
+        popover,
+      ]);
+    });
+
+    const cleanups = Array.from(parentSectionToChildPopovers.entries()).map(
+      ([parentSection, childPopovers]) => {
+        if (!parentSection) {
+          childPopovers.forEach(({ el }) => {
+            setPopoversVisibleState((prev) => new Map(prev).set(el, true));
+          });
+          return;
+        }
+
+        const addShowClassToChildPopovers = () => {
+          childPopovers.forEach(({ el }) => {
+            setPopoversVisibleState((prev) => new Map(prev).set(el, true));
+          });
+        };
+
+        const removeShowClassFromChildPopovers = () => {
+          childPopovers.forEach(({ el }) => {
+            setPopoversVisibleState((prev) => new Map(prev).set(el, false));
+          });
+        };
+
+        parentSection.addEventListener(
+          "mouseover",
+          addShowClassToChildPopovers
+        );
+
+        parentSection.addEventListener(
+          "mouseout",
+          removeShowClassFromChildPopovers
+        );
+
+        return () => {
+          parentSection.removeEventListener(
+            "mouseover",
+            addShowClassToChildPopovers
+          );
+          parentSection.removeEventListener(
+            "mouseout",
+            removeShowClassFromChildPopovers
+          );
+        };
+      }
+    );
+
+    return () => {
+      cleanups.forEach((cleanup) => cleanup?.());
+    };
+  }, [popovers]);
+
   const handleIconSelect = (iconName: string) => {
     if (!iconPickerCurrentFocusedElement) return;
 
@@ -194,6 +264,7 @@ const EditablePopovers: React.FC<Props> = ({
           type={type}
           onClick={() => handlePopoverClick(el, type)}
           showRemoveButton={(el.parentElement?.childElementCount ?? 0) > 1}
+          isHovered={popoversVisibleState.get(el) ?? true}
         />
       ))}
     </>,

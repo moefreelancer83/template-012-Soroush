@@ -12,11 +12,12 @@ import {
   getAllEditableElementGroups,
   getAllEditableElements,
   getElementXAttribute,
+  getFirstXSectionParent,
 } from "./utils";
-import { DataChangeHandler } from "./types";
+import { DataChangeHandler, EditableElementData } from "./types";
 
 type ParamsType = {
-  setEditableElements: Dispatch<SetStateAction<HTMLElement[]>>;
+  setEditableElements: Dispatch<SetStateAction<EditableElementData[]>>;
   changeHandler: DataChangeHandler;
 };
 
@@ -75,7 +76,7 @@ const useObserveDocument = ({
         ...groupElements,
         ...groupItemElements,
         ...elements,
-      ] as HTMLElement[]);
+      ].map(element => ({ element, parentSection: getFirstXSectionParent(element) })));
     };
 
     observerRef.current = new MutationObserver(() => {
