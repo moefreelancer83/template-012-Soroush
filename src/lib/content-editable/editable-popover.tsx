@@ -205,8 +205,15 @@ const EditablePopovers: React.FC<Props> = ({
           });
         };
 
-        const removeShowClassFromChildPopovers = () => {
+        const removeShowClassFromChildPopovers = (event: MouseEvent) => {
           childPopovers.forEach(({ el }) => {
+            if (
+              (event.relatedTarget instanceof HTMLElement ||
+                event.relatedTarget instanceof SVGElement) &&
+              !!event.relatedTarget.closest(".x-edit-button")
+            )
+              return;
+
             setPopoversVisibleState((prev) => new Map(prev).set(el, false));
           });
         };

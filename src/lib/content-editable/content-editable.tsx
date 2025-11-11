@@ -1,9 +1,9 @@
 "use client";
-import { PropsWithChildren, useEffect, useRef, useState } from "react";
+import { PropsWithChildren, useState } from "react";
 import EditablePopovers from "./editable-popover";
 import useObserveDocument from "./use-observe-document";
-import { DataChangeHandler, EditableContentValue, EditableElementData } from "./types";
-import "./styles.css";
+import { DataChangeHandler, EditableElementData } from "./types";
+
 type PropsType = PropsWithChildren<{
   changeHandler: DataChangeHandler;
   imageChangeHandler: (file: File) => Promise<string> | string;

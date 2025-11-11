@@ -36,7 +36,7 @@ const EditButton = ({
   return (
     <div
       className={
-        `absolute z-40 flex flex-col gap-1 transition-all ${isHovered ? "opacity-60" : "opacity-0"} `
+        `x-edit-button absolute z-40 flex flex-col gap-1 transition-opacity ${isHovered ? "opacity-60" : "opacity-0"} hover:opacity-60`
       }
       style={{
         left: left > POSITION_PRECISION ? left - POSITION_PRECISION : left,
@@ -45,7 +45,7 @@ const EditButton = ({
     >
       <button
         onClick={onClick}
-        className="rounded-md p-1 border shadow-md bg-white hover:bg-gray-200 transition"
+        className="x-edit-button rounded-md p-1 border shadow-md bg-white hover:bg-gray-200 transition"
       >
         {typeToIcon[type]}
       </button>
