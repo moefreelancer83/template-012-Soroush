@@ -69,9 +69,9 @@ export default function HomeClient() {
       </section>
 
       {/* About Us Preview */}
-      <section className="py-20">
+      <section className="py-20" data-x-section>
         <div className="container mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-16 items-center" data-x-section>
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
             <AnimatedSection animation="slide-in-left">
               {/* <h2
                 className="text-4xl md:text-5xl font-playfair font-bold text-navy mb-6"
